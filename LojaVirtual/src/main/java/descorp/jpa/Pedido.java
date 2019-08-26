@@ -1,0 +1,112 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package descorp.jpa;
+
+
+import java.io.Serializable;
+import java.util.List;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotBlank;
+import javax.validation.Valid;
+/**
+ *
+ * @author marcosbrasil98
+ */
+@Entity
+@Table(name="TB_PEDIDO")
+@Access(AccessType.FIELD)
+public class Pedido implements Serializable{
+
+@Id
+@GeneratedValue(strategy =GenerationType.IDENTITY )
+@Column(name = "PEDIDO_ID",nullable = false)
+private Integer id;
+
+@NotNull
+@Size(max=20)
+@Column(name = "PEDIDO_LOG")
+private String log;
+
+@NotNull
+@Column(name = "PEDIDO_QUANTIDADE")
+private Integer quantidade; 
+
+
+@Valid
+@ManyToOne(fetch = FetchType.LAZY,optional = false)
+@JoinColumn(name = "CLIENTE_FK",referencedColumnName = "USUARIO_ID",insertable = true, updatable = true)
+  private ClienteUsuario Clienteusuario;
+
+@Valid
+@ManyToMany
+    @JoinTable(name="TB_PEDIDO_PRODUTO", joinColumns=
+    {@JoinColumn(name="PEDIDO_ID")}, inverseJoinColumns=
+      {@JoinColumn(name="PRODUTO_ID")})
+   private List<Produto> produto;
+
+public boolean possui(String log){
+       return log.contains(log);
+   }
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getLog() {
+        return log;
+    }
+
+    public void setLog(String log) {
+        this.log = log;
+    }
+
+    public Integer getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(Integer quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public ClienteUsuario getUsuario() {
+        return Clienteusuario;
+    }
+
+    public void setUsuario(ClienteUsuario usuario) {
+        this.Clienteusuario = usuario;
+    }
+
+    public List<Produto> getProduto() {
+        return produto;
+    }
+
+    public void setProduto(List<Produto> produto) {
+        this.produto = produto;
+    }
+
+}

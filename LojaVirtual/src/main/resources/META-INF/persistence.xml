@@ -2,16 +2,16 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="lojaVirtual" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>exemplo.jpa.Administrador</class>
     <!--<class>exemplo.jpa.ClienteUsuario</class>-->
-    <class>exemplo.jpa.CorProduto</class>
-    <class>exemplo.jpa.EnderecoCliente</class>
-    <class>exemplo.jpa.ImagemProduto</class>
-    <class>exemplo.jpa.Pedido</class>
-    <class>exemplo.jpa.Produto</class>
-    <class>exemplo.jpa.TamanhoProduto</class>
-    <class>exemplo.jpa.TipoProduto</class>
-    <class>exemplo.jpa.UsuarioGeral</class>
+    <class>descorp.jpa.Pedido</class>
+    <class>descorp.jpa.CorProduto</class>
+    <class>descorp.jpa.EnderecoCliente</class>
+    <class>descorp.jpa.TamanhoProduto</class>
+    <class>descorp.jpa.TipoProduto</class>
+    <class>descorp.jpa.Produto</class>
+    <class>descorp.jpa.Administrador</class>
+    <class>descorp.jpa.UsuarioGeral</class>
+    <class>descorp.jpa.ImagemProduto</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/lojaVirtual"/>
