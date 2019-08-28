@@ -51,7 +51,7 @@ public abstract class UsuarioGeral implements Serializable {
 @Id
 @GeneratedValue (strategy = GenerationType.IDENTITY)
 @Column (name="USUARIO_ID")
-private Integer id;
+private Long id;
 
 @NotBlank(message = "Nome do usuário não pode ser null")
 @Size(max=40)
@@ -75,11 +75,11 @@ private String cpf;
         return nome.contains(nome);
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

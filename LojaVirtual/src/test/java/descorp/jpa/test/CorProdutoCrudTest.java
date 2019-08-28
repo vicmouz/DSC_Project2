@@ -34,7 +34,7 @@ public class CorProdutoCrudTest extends GenericTest {
     public void Atualizar() {
         logger.info("Executando atualizar()");
         String nome = "VIOLETA";
-        Integer id = 1;
+        Long id = 1l;
         CorProduto cp = em.find(CorProduto.class, id);
         cp.setNome(nome);
 
@@ -53,7 +53,7 @@ public class CorProdutoCrudTest extends GenericTest {
         logger.info("Executando atualizarMerge()");
         String nome = "Azul claro";
 
-        Integer id = 1;
+        Long id = 1l;
         CorProduto cp = em.find(CorProduto.class, id);
         cp.setNome(nome);
 
@@ -71,9 +71,9 @@ public class CorProdutoCrudTest extends GenericTest {
     @Test
     public void remover() {
         logger.info("Executando remover()");
-        CorProduto cp = em.find(CorProduto.class, 1);
+        CorProduto cp = em.find(CorProduto.class, 1l);
         em.remove(cp);
-        CorProduto cp1 = em.find(CorProduto.class, 1);
+        CorProduto cp1 = em.find(CorProduto.class, 1l);
         assertNull(cp1);
     }
 

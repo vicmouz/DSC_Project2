@@ -34,7 +34,7 @@ public class TamanhoProduto implements Serializable{
  @Id
  @GeneratedValue(strategy = GenerationType.IDENTITY)
  @Column(name="TAMANHOPRODUTO_ID")
- private Integer id;
+ private Long id;
  
  @NotEmpty
  @Column(name="TAMANHOPRODUTO_NOME")
@@ -59,11 +59,11 @@ public class TamanhoProduto implements Serializable{
    }
 
  
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -107,8 +107,4 @@ public class TamanhoProduto implements Serializable{
         this.tipo = tipo;
     }
 
-   
-
-    
- 
 }

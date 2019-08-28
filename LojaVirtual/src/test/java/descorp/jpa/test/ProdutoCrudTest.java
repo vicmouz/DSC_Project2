@@ -40,7 +40,7 @@ public class ProdutoCrudTest extends GenericTest {
         String nome = "Camisa de Formatura";
         int quantidade = 1000;
        
-        Integer id = 1;
+        Long id = 1l;
          Produto p =em.find(Produto.class, id);
         p.setNome(nome);
         p.setQuantidade(quantidade);
@@ -56,7 +56,7 @@ public class ProdutoCrudTest extends GenericTest {
         String nome = "Camisa de ABC";
         int quantidade = 500;
        
-        Integer id = 1;
+        Long id = 1l;
          Produto p =em.find(Produto.class, id);
         p.setNome(nome);
         p.setQuantidade(quantidade);
@@ -72,16 +72,16 @@ public class ProdutoCrudTest extends GenericTest {
             System.out.println("Possui nome!");
         }
     }
-   /*
+   
     @Test
     public void remover() {
         logger.info("Executando remover()");
-         Produto p = em.find(Produto.class, 2);
+         Produto p = em.find(Produto.class, 2l);
         em.remove(p);
-        Produto  p1 = em.find(Produto.class, 2);
+        Produto  p1 = em.find(Produto.class, 2l);
         assertNull(p1);
     }
-*/
+
     private Produto criarProduto() {
      Produto p = new Produto();
      p.setNome("Short");

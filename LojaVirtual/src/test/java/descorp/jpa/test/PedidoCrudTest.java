@@ -39,7 +39,7 @@ public class PedidoCrudTest extends GenericTest {
         String log = "23232323";
         int quantidade = 13;
 
-        Integer id = 1;
+        Long id = 1l;
         Pedido p = em.find(Pedido.class, id);
         p.setLog(log);
         p.setQuantidade(quantidade);
@@ -63,7 +63,7 @@ public class PedidoCrudTest extends GenericTest {
         String log = "2124b1l2j41bkhj";
         int quantidade = 500;
 
-        Integer id = 1;
+        Long id = 1l;
         Pedido p = em.find(Pedido.class, id);
         p.setLog(log);
         p.setQuantidade(quantidade);
@@ -81,15 +81,15 @@ public class PedidoCrudTest extends GenericTest {
     @Test
     public void remover() {
         logger.info("Executando remover()");
-        Pedido p = em.find(Pedido.class, 1);
+        Pedido p = em.find(Pedido.class, 1l);
         em.remove(p);
-        Pedido p1 = em.find(Pedido.class, 1);
+        Pedido p1 = em.find(Pedido.class, 1l);
         assertNull(p1);
     }
 
     private Pedido criarPedido() {
         Pedido p = new Pedido();
-        p.setId(6);
+        p.setId(6l);
         p.setLog("32klnsfknfjkasdas");
         p.setQuantidade(333);
 

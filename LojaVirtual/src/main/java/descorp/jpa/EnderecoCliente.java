@@ -11,6 +11,7 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.ColumnResult;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.EntityResult;
 import javax.persistence.GeneratedValue;
@@ -71,11 +72,12 @@ import org.hibernate.validator.constraints.NotBlank;
 )
 public class EnderecoCliente implements Serializable{
     
- @Id
+@Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
  @Column(name="ENDERECO_ID")
- private Integer id;
+ private Long id;
  
+    
  @NotNull
  @Size(max=100)
  @Column(name="ENDERECO_NOME")
@@ -121,14 +123,6 @@ public boolean possui(String nome){
        return nome.contains(nome);
    }
 
- 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getNome() {
         return nome;

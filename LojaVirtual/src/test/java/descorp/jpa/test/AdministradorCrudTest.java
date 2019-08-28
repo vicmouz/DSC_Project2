@@ -33,7 +33,7 @@ public class AdministradorCrudTest extends GenericTest {
 
     private Administrador criarADM() {
       Administrador adm = new Administrador();
-      adm.setId(3);
+      adm.setId(3l);
       adm.setNome("Marcos Brasileiro");
       adm.setEmail("m@gmail.com");
       adm.setCpf("595.436.610-14");
@@ -47,7 +47,7 @@ public class AdministradorCrudTest extends GenericTest {
         String novoEmail = "fulano_de_tal@gmail.com";
         String cpf = "807.392.930-95";
         
-        Integer id = 2;
+        Long id = 2l;
         Administrador adm = em.find(Administrador.class, id);
         adm.setEmail(novoEmail);
         adm.setCpf(cpf);
@@ -66,7 +66,7 @@ public class AdministradorCrudTest extends GenericTest {
         logger.info("Executando atualizarAdmMerge()");
         String novoEmail = "cicrano_de_tal2@gmail.com";
         String cpf = "848.345.490-46";
-        Integer id = 2;
+        Long id = 2l;
         Administrador adm = em.find(Administrador.class, id);
         adm.setEmail(novoEmail);
         adm.setCpf(cpf);
@@ -82,9 +82,9 @@ public class AdministradorCrudTest extends GenericTest {
     @Test
     public void removerADM() {
         logger.info("Executando removerADM()");
-        Administrador adm = em.find(Administrador.class, 2);
+        Administrador adm = em.find(Administrador.class, 2l);
         em.remove(adm);
-        Administrador adm1 = em.find(Administrador.class, 2);
+        Administrador adm1 = em.find(Administrador.class, 2l);
         assertNull(adm1);
     }
 

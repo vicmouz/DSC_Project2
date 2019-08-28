@@ -20,7 +20,7 @@ import org.junit.Test;
  */
 public class EnderecoClienteCrudTest extends GenericTest {
 
-    @Test
+  /*  @Test
     public void persistir() {
         logger.info("Executando persistirEndereco()");
         EnderecoCliente ec = criarEndereco();
@@ -37,7 +37,7 @@ public class EnderecoClienteCrudTest extends GenericTest {
         String numero = "1000";
         String bairro = "Boa Viagem";
 
-        Integer id = 1;
+        Long id = 1l;
         EnderecoCliente ec = em.find(EnderecoCliente.class, id);
         ec.setNome(nome);
         ec.setNumero(numero);
@@ -61,7 +61,7 @@ public class EnderecoClienteCrudTest extends GenericTest {
         String numero = "500";
         String bairro = "ipsep";
 
-        Integer id = 1;
+        Long id = 1l;
         EnderecoCliente ec = em.find(EnderecoCliente.class, id);
         ec.setNome(nome);
         ec.setNumero(numero);
@@ -79,7 +79,7 @@ public class EnderecoClienteCrudTest extends GenericTest {
         /*if(ec.getNome().contains(nome)){
             System.out.println("Possui nome!");
         }*/
-    }
+ /*   }
 
     @Test
     public void remover() {
@@ -100,5 +100,5 @@ public class EnderecoClienteCrudTest extends GenericTest {
         ec.setEstado("São Paulo");
         ec.setPais("BR");
         return ec;
-    }
+    }*/
 }

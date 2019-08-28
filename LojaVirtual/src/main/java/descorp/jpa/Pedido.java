@@ -40,7 +40,7 @@ public class Pedido implements Serializable{
 @Id
 @GeneratedValue(strategy =GenerationType.IDENTITY )
 @Column(name = "PEDIDO_ID",nullable = false)
-private Integer id;
+private Long id;
 
 @NotNull
 @Size(max=20)
@@ -69,11 +69,11 @@ public boolean possui(String log){
    }
 
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

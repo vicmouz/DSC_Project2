@@ -36,7 +36,7 @@ public class TamanhoProdutoCrudTest extends GenericTest{
         String nome = "Enorme";
         double largura = 93.5;
         
-        Integer id = 1;
+        Long id = 1l;
         TamanhoProduto tp = em.find(TamanhoProduto.class, id);
         tp.setNome(nome);
         tp.setLargura(largura);
@@ -49,7 +49,7 @@ public class TamanhoProdutoCrudTest extends GenericTest{
         logger.info("Executando atualizarTPMerge()");
         String nome="Minúsculo";
         double comprimento= 1.3;
-        Integer id = 1;
+        Long id = 1l;
        TamanhoProduto tp = em.find(TamanhoProduto.class, id);
         tp.setNome(nome);
         tp.setComprimento(comprimento);
@@ -68,9 +68,9 @@ public class TamanhoProdutoCrudTest extends GenericTest{
     @Test
     public void removerTamanhoProduto() {
         logger.info("Executando removerTamanhoProduto()");
-        TamanhoProduto tp = em.find(TamanhoProduto.class, 2);
+        TamanhoProduto tp = em.find(TamanhoProduto.class, 2l);
         em.remove(tp);
-        TamanhoProduto tp1 = em.find(TamanhoProduto.class, 2);
+        TamanhoProduto tp1 = em.find(TamanhoProduto.class, 2l);
         assertNull(tp1);
     }
 

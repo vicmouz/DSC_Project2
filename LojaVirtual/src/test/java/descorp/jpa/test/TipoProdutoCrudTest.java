@@ -35,7 +35,7 @@ public class TipoProdutoCrudTest extends GenericTest {
         logger.info("Executando atualizarTipoProduto()");
         String nome = "Brinquedo";
 
-        Integer id = 2;
+        Long id = 2l;
         TipoProduto tp = em.find(TipoProduto.class, id);
         tp.setNome(nome);
 
@@ -51,7 +51,7 @@ public class TipoProdutoCrudTest extends GenericTest {
     public void atualizarTPMerge() {
         logger.info("Executando atualizarTPMerge()");
         String nome = "Beyblade";
-        Integer id = 2;
+        Long id = 2l;
         TipoProduto tp = em.find(TipoProduto.class, id);
         tp.setNome(nome);
 
@@ -69,9 +69,9 @@ public class TipoProdutoCrudTest extends GenericTest {
     @Test
     public void removerTipoProduto() {
         logger.info("Executando removerTipoProduto()");
-        TipoProduto tp = em.find(TipoProduto.class, 2);
+        TipoProduto tp = em.find(TipoProduto.class, 2l);
         em.remove(tp);
-        TipoProduto tp1 = em.find(TipoProduto.class, 2);
+        TipoProduto tp1 = em.find(TipoProduto.class, 2l);
         assertNull(tp1);
     }
 

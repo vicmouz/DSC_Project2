@@ -28,7 +28,8 @@ public class TipoProduto implements Serializable{
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 @Column(name = "TIPOPRODUTO_ID")
-private Integer id;
+private Long id;
+
 @NotNull
 @Column(name = "TIPOPRODUTO_NOME")
 private String nome;
@@ -38,11 +39,11 @@ public boolean possui(String nome){
    }
 
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

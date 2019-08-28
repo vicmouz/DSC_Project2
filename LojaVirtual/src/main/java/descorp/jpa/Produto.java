@@ -11,6 +11,7 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -51,7 +52,7 @@ public class Produto implements Serializable{
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 @Column(name = "PRODUTO_ID")
-private Integer id;
+private Long id;
 
 @NotNull
 @Size(max = 30)
@@ -71,7 +72,8 @@ private Integer quantidade;
 @Column(name = "PRODUTO_PRECO")
 private double preco;
 
-
+@Embedded
+private ImagemProduto imgProduto;
 
 
 
@@ -99,11 +101,11 @@ public boolean possui(String nome){
        return nome.contains(nome);
    }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -31,7 +31,6 @@
     <TB_CORPRODUTO corproduto_id="4" corproduto_nome="Amarelo"  corproduto_tipo="Camisa"/>
     <TB_CORPRODUTO corproduto_id="5" corproduto_nome="Marrom"  corproduto_tipo="Boné" />
 
-   <TB_IMGPRODUTO imgproduto_id="2" corimagem_fk="2"/>
     <TB_PRODUTO_COR produto_id="1" corproduto_id="2"/>
     <TB_PRODUTO_COR produto_id="4" corproduto_id="4"/>
     <TB_PRODUTO_COR produto_id="5" corproduto_id="5"/>

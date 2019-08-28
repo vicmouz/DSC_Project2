@@ -36,7 +36,7 @@ public class CorProduto implements Serializable{
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 @Column(name="CORPRODUTO_ID")
-private Integer id;
+private Long id;
 
 @NotBlank
 @Column(name = "CORPRODUTO_NOME")
@@ -44,10 +44,6 @@ private String nome;
 @NotNull(message = "Tipo não pode ser null")
 @Column(name = "CORPRODUTO_TIPO")
 private String tipo;
-
-@Valid
-@OneToMany(mappedBy = "corImagem",fetch = FetchType.LAZY,cascade = CascadeType.ALL,orphanRemoval = true)
-private List<ImagemProduto> imagem;
 
     public String getTipo() {
         return tipo;
@@ -59,11 +55,11 @@ private List<ImagemProduto> imagem;
 
 
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -73,16 +69,6 @@ private List<ImagemProduto> imagem;
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-   
-
-    public List<ImagemProduto> getImagem() {
-        return imagem;
-    }
-
-    public void setImagem(List<ImagemProduto> imagem) {
-        this.imagem = imagem;
     }
 
 }
