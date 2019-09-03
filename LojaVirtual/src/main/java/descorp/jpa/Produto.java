@@ -96,6 +96,15 @@ private List<TamanhoProduto> tamanho;
       {@JoinColumn(name="CORPRODUTO_ID")})
 private List<CorProduto> cor;
 
+    public ImagemProduto getImgProduto() {
+        return imgProduto;
+    }
+
+    public void setImgProduto(ImagemProduto imgProduto) {
+        this.imgProduto = imgProduto;
+    }
+
+
    
 public boolean possui(String nome){
        return nome.contains(nome);

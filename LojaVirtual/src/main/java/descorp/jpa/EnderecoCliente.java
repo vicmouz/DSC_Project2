@@ -188,6 +188,14 @@ public boolean possui(String nome){
     public void setPais(String pais) {
         this.pais = pais;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
  
 
 

@@ -17,4 +17,13 @@ import javax.persistence.Embeddable;
 public class ImagemProduto{
    
     private String imageProduto;
+
+    public String getImageProduto() {
+        return imageProduto;
+    }
+
+    public void setImageProduto(String imageProduto) {
+        this.imageProduto = imageProduto;
+    }
+    
   }

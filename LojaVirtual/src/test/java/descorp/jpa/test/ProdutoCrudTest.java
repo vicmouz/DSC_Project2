@@ -6,6 +6,7 @@
 package descorp.jpa.test;
 
 import descorp.jpa.CorProduto;
+import descorp.jpa.ImagemProduto;
 import descorp.jpa.Produto;
 import descorp.jpa.TamanhoProduto;
 import descorp.jpa.TipoProduto;
@@ -87,9 +88,13 @@ public class ProdutoCrudTest extends GenericTest {
      p.setNome("Short");
      p.setPreco(12.5);
      p.setDescricao("Ótima qualidade");
+     p.setQuantidade(200);
      TipoProduto tp = new TipoProduto();
      tp = criarTP();
      p.setTipoProduto(tp);
+     ImagemProduto i = new ImagemProduto();
+     i = criarImagem();
+     p.setImgProduto(i);
      
    
      return p;
@@ -99,6 +104,12 @@ public class ProdutoCrudTest extends GenericTest {
         tp.setNome("Short");
         return tp;
     }
+        private ImagemProduto criarImagem(){
+          ImagemProduto img = new ImagemProduto();
+          img.setImageProduto("AAAAAAAAAAAAAA");
+          return img;
+        }
+        
     
 
     

@@ -20,7 +20,7 @@ import org.junit.Test;
  */
 public class EnderecoClienteCrudTest extends GenericTest {
 
-  /*  @Test
+   @Test
     public void persistir() {
         logger.info("Executando persistirEndereco()");
         EnderecoCliente ec = criarEndereco();
@@ -79,14 +79,14 @@ public class EnderecoClienteCrudTest extends GenericTest {
         /*if(ec.getNome().contains(nome)){
             System.out.println("Possui nome!");
         }*/
- /*   }
+   }
 
     @Test
     public void remover() {
         logger.info("Executando remover()");
-        EnderecoCliente ec = em.find(EnderecoCliente.class, 2);
+        EnderecoCliente ec = em.find(EnderecoCliente.class, 2l);
         em.remove(ec);
-        EnderecoCliente ec1 = em.find(EnderecoCliente.class, 2);
+        EnderecoCliente ec1 = em.find(EnderecoCliente.class, 2l);
         assertNull(ec1);
     }
 
@@ -99,6 +99,7 @@ public class EnderecoClienteCrudTest extends GenericTest {
         ec.setComplemento("Casa");
         ec.setEstado("São Paulo");
         ec.setPais("BR");
+        ec.setNumero("580");
         return ec;
-    }*/
+    }
 }

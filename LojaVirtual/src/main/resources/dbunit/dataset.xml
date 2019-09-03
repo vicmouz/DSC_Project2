@@ -13,7 +13,7 @@
     <TB_PRODUTO produto_id="4" produto_nome="Chaveiro pequena" produto_descricao="Chaveiro do Hulk"  produto_quantidade="90" produto_preco="7.2"/>
     <TB_PRODUTO produto_id="5" produto_nome="Boné Enorme" produto_descricao="Boné da Liga da Justiça"  produto_quantidade="100" produto_preco="1.23"/>
   
-    <TB_TAMANHOPRODUTO tamanhoproduto_id="1" tamanhoproduto_nome="Pequeno" tamanhoproduto_largura="23.5" tamanhoproduto_altura="22.1"
+   <TB_TAMANHOPRODUTO tamanhoproduto_id="1" tamanhoproduto_nome="Pequeno" tamanhoproduto_largura="23.5" tamanhoproduto_altura="22.1"
                        tamanhoproduto_comprimento="13.5" tamanhoproduto_tipo="Caneca" />
     <TB_TAMANHOPRODUTO tamanhoproduto_id="2" tamanhoproduto_nome="Grande" tamanhoproduto_largura="29.5" tamanhoproduto_altura="21.1"
                        tamanhoproduto_comprimento="29.5" tamanhoproduto_tipo="Garrafa" />
@@ -49,7 +49,7 @@
     endereco_complemento="Viaduto" endereco_bairro="Boa Vista" endereco_cidade="Recife" endereco_cep="11111"
     endereco_estado="PE" endereco_pais="BR"/>
     
-    <TB_USUARIOGERAL usuario_id="1" usuario_cpf="111111111111" usuario_nome="Jukes da Silva" usuario_email="jk@gmail.com" usuario_tipo="C"/>
+    <TB_USUARIOGERAL usuario_id="1" usuario_cpf="415.944.840-23" usuario_nome="Jukes da Silva" usuario_email="jk@gmail.com" usuario_tipo="C"/>
     <TB_USUARIOGERAL usuario_id="2" usuario_cpf="8786781111" usuario_nome="Rakin de Paula" usuario_email="rp@gmail.com" usuario_tipo="A"/>
     <TB_USUARIOGERAL usuario_id="3" usuario_cpf="3232323232" usuario_nome="Jovirone Franco" usuario_email="jf@gmail.com" usuario_tipo="A"/>
     <TB_USUARIOGERAL usuario_id="4" usuario_cpf="1212121212" usuario_nome="4lan" usuario_email="4lan@gmail.com" usuario_tipo="C"/>
@@ -60,11 +60,11 @@
     <TB_ADMUSUARIO usuario_id="3" adm_permissao="Não Concebida"/>
     <TB_ADMUSUARIO usuario_id="6" adm_permissao="Concedida"/>
     
-    <TB_PEDIDO pedido_id="1" pedido_log="rqqw4qw42" pedido_quantidade="323"/>
-    <TB_PEDIDO pedido_id="2" pedido_log="232323232" pedido_quantidade="200"/>
-    <TB_PEDIDO pedido_id="3" pedido_log="fsfs42352" pedido_quantidade="1"/>
-    <TB_PEDIDO pedido_id="4" pedido_log="fsfs64647" pedido_quantidade="25"/>
-    <TB_PEDIDO pedido_id="5" pedido_log="nff979767" pedido_quantidade="100"/>
+    <TB_PEDIDO pedido_id="1" pedido_log="rqqw4qw42" pedido_quantidade="323" pedido_status="ANDAMENTO"/>
+    <TB_PEDIDO pedido_id="2" pedido_log="232323232" pedido_quantidade="200" pedido_status="ANDAMENTO"/>
+    <TB_PEDIDO pedido_id="3" pedido_log="fsfs42352" pedido_quantidade="1" pedido_status="ANDAMENTO"/>
+    <TB_PEDIDO pedido_id="4" pedido_log="fsfs64647" pedido_quantidade="25" pedido_status="ANDAMENTO"/>
+<TB_PEDIDO pedido_id="5" pedido_log="nff979767" pedido_quantidade="100" pedido_status="ANDAMENTO"/>
 
     <TB_PEDIDO_PRODUTO pedido_id="1" produto_id="1"/>
     <TB_PEDIDO_PRODUTO pedido_id="1" produto_id="3"/>

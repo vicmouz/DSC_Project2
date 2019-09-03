@@ -13,6 +13,8 @@ import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -51,6 +53,9 @@ private String log;
 @Column(name = "PEDIDO_QUANTIDADE")
 private Integer quantidade; 
 
+@Enumerated(EnumType.STRING) //Use EnumType.ORDINAL para armazenar a enumeração como inteiro.
+    @Column(name = "PEDIDO_STATUS", nullable = false, length = 20)
+    private StatusPedido status;
 
 @Valid
 @ManyToOne(fetch = FetchType.LAZY,optional = false)
@@ -63,6 +68,23 @@ private Integer quantidade;
     {@JoinColumn(name="PEDIDO_ID")}, inverseJoinColumns=
       {@JoinColumn(name="PRODUTO_ID")})
    private List<Produto> produto;
+
+    public StatusPedido getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusPedido status) {
+        this.status = status;
+    }
+
+    public ClienteUsuario getClienteusuario() {
+        return Clienteusuario;
+    }
+
+    public void setClienteusuario(ClienteUsuario Clienteusuario) {
+        this.Clienteusuario = Clienteusuario;
+    }
+
 
 public boolean possui(String log){
        return log.contains(log);

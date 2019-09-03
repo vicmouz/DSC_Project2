@@ -53,12 +53,12 @@ public abstract class UsuarioGeral implements Serializable {
 @Column (name="USUARIO_ID")
 private Long id;
 
-@NotBlank(message = "Nome do usuário não pode ser null")
+
 @Size(max=40)
 @Column (name="USUARIO_NOME", length=40)
 private String nome;
 
-@NotBlank(message = "Email do usuário não pode ser null")
+
 @Size(max=40)
 @Email
 @Column(name="USUARIO_EMAIL",length=40)

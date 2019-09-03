@@ -1,15 +1,10 @@
+
+
 package descorp.jpa.test;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.*/
-/* 
-package exemplo.jpa.test;
-
-import exemplo.jpa.ClienteUsuario;
-import exemplo.jpa.EnderecoCliente;
-import exemplo.jpa.UsuarioGeral;
+import descorp.jpa.ClienteUsuario;
+import descorp.jpa.EnderecoCliente;
+import descorp.jpa.UsuarioGeral;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,9 +12,6 @@ import javax.persistence.CacheRetrieveMode;
 import javax.persistence.TypedQuery;
 import org.junit.Test;
 import static org.junit.Assert.*;
-/**
- *
- * @author joaomouzinho
  
 
 public class ClienteUsuarioCrudTest extends GenericTest{
@@ -39,7 +31,7 @@ public class ClienteUsuarioCrudTest extends GenericTest{
         String novoEmail = "cicrano_de_tal@gmail.com";
         String telefone = "(81) 40028922";
         String fixo ="923423523";
-        Integer id = 2;
+        Long id = 1l;
         ClienteUsuario cliente = em.find(ClienteUsuario.class, id);
         cliente.setEmail(novoEmail);
         cliente.setCelular(telefone);
@@ -52,7 +44,7 @@ public class ClienteUsuarioCrudTest extends GenericTest{
         cliente = query.getSingleResult();
         assertEquals(novoEmail, cliente.getEmail());
         if(cliente.getCelular().contains(telefone)){
-            System.out.println("Possui telefone!");
+            System.out.println("Possui telefone!");*/
         
     }
     
@@ -61,7 +53,7 @@ public class ClienteUsuarioCrudTest extends GenericTest{
         logger.info("Executando atualizarClienteUsuarioMerge()");
         String novoEmail = "cicrano_de_tal2@gmail.com";
         String telefone = "(81) 40028229";
-        Integer id = 2;
+        Long id = 1l;
         ClienteUsuario cliente = em.find(ClienteUsuario.class, id);
         cliente.setEmail(novoEmail);
         cliente.setCelular(telefone);
@@ -79,18 +71,18 @@ public class ClienteUsuarioCrudTest extends GenericTest{
     @Test
     public void removerClienteUsuario() {
         logger.info("Executando removerClienteUsuario()");
-        ClienteUsuario cliente = em.find(ClienteUsuario.class, 2);
+        ClienteUsuario cliente = em.find(ClienteUsuario.class, 1l);
         em.remove(cliente);
-        UsuarioGeral usuario = em.find(UsuarioGeral.class, 2);
+        UsuarioGeral usuario = em.find(UsuarioGeral.class, 1l);
         assertNull(usuario);
     }
 
     private ClienteUsuario criarClienteUsuario() {
         ClienteUsuario cliente = new ClienteUsuario();
-        cliente.setId(1);
+        cliente.setId(1l);
         cliente.setNome("Cicrano Knittrel");
         cliente.setEmail("rakin@gmail.com");
-        cliente.setCpf("534.585.765-40");
+        cliente.setCpf("100.639.154-13");
         cliente.setCelular("(81) 4002-8922");
         cliente.setFixo("(81) 8922-4002");
         cliente.setDataNascimento("24242424");
@@ -101,13 +93,15 @@ public class ClienteUsuarioCrudTest extends GenericTest{
     }
 
     private EnderecoCliente criarEndereco() {
-        EnderecoCliente endereco = new EnderecoCliente();
-        endereco.setNome("Rua VPP");
-        endereco.setBairro("Iputinga");
-        endereco.setCidade("Recife");
-        endereco.setCep("50690-220");
-        endereco.setNumero("255");
-        
-        return endereco;
+        EnderecoCliente ec = new EnderecoCliente();
+         ec.setNome("Avenida Paulista");
+        ec.setBairro("São Paulo");
+        ec.setCep("424242442");
+        ec.setCidade("São Paulo");
+        ec.setComplemento("Casa");
+        ec.setEstado("São Paulo");
+        ec.setPais("BR");
+        ec.setNumero("580");
+        return ec;
 }
-}*/
+}

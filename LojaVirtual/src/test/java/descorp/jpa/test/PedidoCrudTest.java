@@ -7,6 +7,7 @@ package descorp.jpa.test;
 
 import descorp.jpa.Pedido;
 import descorp.jpa.Produto;
+import descorp.jpa.StatusPedido;
 import descorp.jpa.TipoProduto;
 import java.util.HashMap;
 import java.util.List;
@@ -37,12 +38,12 @@ public class PedidoCrudTest extends GenericTest {
     public void Atualizar() {
         logger.info("Executando atualizar()");
         String log = "23232323";
-        int quantidade = 13;
+        
 
         Long id = 1l;
         Pedido p = em.find(Pedido.class, id);
         p.setLog(log);
-        p.setQuantidade(quantidade);
+        p.setStatus(StatusPedido.ENTREGUE);
 
         em.flush();
 
@@ -52,7 +53,7 @@ public class PedidoCrudTest extends GenericTest {
 
         assertEquals(log, p.getLog());
         
-        assertEquals("13", p.getQuantidade());
+        assertEquals(StatusPedido.ENTREGUE,p.getStatus());
 
         logger.info("Atualizado");
     }
@@ -61,12 +62,12 @@ public class PedidoCrudTest extends GenericTest {
     public void atualizarMerge() {
         logger.info("Executando atualizarMerge()");
         String log = "2124b1l2j41bkhj";
-        int quantidade = 500;
+        
 
         Long id = 1l;
         Pedido p = em.find(Pedido.class, id);
         p.setLog(log);
-        p.setQuantidade(quantidade);
+        p.setStatus(StatusPedido.ENTREGUE);
 
         em.clear();
         em.merge(p);
@@ -75,7 +76,7 @@ public class PedidoCrudTest extends GenericTest {
         p = em.find(Pedido.class, id, properties);
 
         assertEquals(log, p.getLog());
-        assertEquals("13", p.getQuantidade());
+        assertEquals(StatusPedido.ENTREGUE,p.getStatus());
     }
 
     @Test
@@ -92,7 +93,7 @@ public class PedidoCrudTest extends GenericTest {
         p.setId(6l);
         p.setLog("32klnsfknfjkasdas");
         p.setQuantidade(333);
-
+        p.setStatus(StatusPedido.CANCELADO);
         return p;
     }
 

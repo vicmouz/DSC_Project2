@@ -17,6 +17,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotBlank;
@@ -53,6 +54,13 @@ public class TamanhoProduto implements Serializable{
  @Size(max = 50)
  @Column(name="TAMANHOPRODUTO_TIPO")
  private String tipo;
+ 
+
+
+   
+ 
+ 
+ 
 
    public boolean possui(String nome){
        return nome.contains(nome);
