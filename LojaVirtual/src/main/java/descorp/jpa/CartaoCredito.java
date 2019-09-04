@@ -24,16 +24,18 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "TB_CARTAO_CREDITO")
 public class CartaoCredito implements Serializable {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)    
-    private Long id;  
+    @Column(name = "ID_CARTAO_CREDITO")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @OneToOne(mappedBy = "cartaoCredito", optional = false)
     private ClienteUsuario usuario;
     @Column(name = "TXT_BANDEIRA")
     private String bandeira;
     @Column(name = "TXT_NUMERO")
     private String numero;
-   
+
     @Temporal(TemporalType.DATE)
     @Column(name = "DT_EXPIRACAO", nullable = false)
     private Date dataExpiracao;
@@ -77,5 +79,5 @@ public class CartaoCredito implements Serializable {
     public void setDataExpiracao(Date dataExpiracao) {
         this.dataExpiracao = dataExpiracao;
     }
- 
+
 }

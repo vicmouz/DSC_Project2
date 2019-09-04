@@ -49,6 +49,12 @@
                         endereco_complemento="Viaduto" endereco_bairro="Boa Vista" endereco_cidade="Recife" endereco_cep="11111"
                         endereco_estado="PE" endereco_pais="BR"/>
     
+    <TB_CARTAO_CREDITO txt_bandeira = "VISA" dt_expiracao = "2024-04-10" txt_numero = "4073020000000002"/>    
+    <TB_CARTAO_CREDITO txt_bandeira = "MASTERCARD" dt_expiracao = "2023-04-10" txt_numero = "5555666677778884"/>    
+    <TB_CARTAO_CREDITO txt_bandeira = "VISA" dt_expiracao = "2020-06-17" txt_numero = "4084770193100046"/>    
+    <TB_CARTAO_CREDITO txt_bandeira = "MAESTRO" dt_expiracao = "2022-01-17" txt_numero = "6759744303415452"/>    
+    <TB_CARTAO_CREDITO txt_bandeira = "HIPERCARD" dt_expiracao = "2021-04-10" txt_numero = "4073020012000002"/>   
+    
     <TB_USUARIOGERAL usuario_id="1" usuario_cpf="415.944.840-23" usuario_nome="Jukes da Silva" usuario_email="jk@gmail.com" usuario_tipo="C"/>
     <TB_USUARIOGERAL usuario_id="2" usuario_cpf="8786781111" usuario_nome="Rakin de Paula" usuario_email="rp@gmail.com" usuario_tipo="A"/>
     <TB_USUARIOGERAL usuario_id="3" usuario_cpf="3232323232" usuario_nome="Jovirone Franco" usuario_email="jf@gmail.com" usuario_tipo="A"/>
@@ -71,13 +77,9 @@
     <TB_PEDIDO_PRODUTO pedido_id="1" produto_id="4"/>
     <TB_PEDIDO_PRODUTO pedido_id="2" produto_id="5"/>
     <!-- <TB_PRODUTO_TAMANHO produto_id="1" tamanhoproduto_id="1"/>-->
-    <TB_CLIENTEUSUARIO usuario_id="1" cliente_datanascimento="2014-11-12 01:36:53" cliente_celular="323232" cliente_fixo="3232324"/>
+    <TB_CLIENTEUSUARIO usuario_id="1" cliente_datanascimento="2014-11-12 01:36:53" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "3"/>
     
-    <TB_CARTAO_CREDITO txt_bandeira = "VISA" dt_expiracao = "2018-04-10" txt_numero = "4073020000000002"/>    
-    <TB_CARTAO_CREDITO txt_bandeira = "MASTERCARD" dt_expiracao = "2017-04-10" txt_numero = "5555666677778884"/>    
-    <TB_CARTAO_CREDITO txt_bandeira = "VISA" dt_expiracao = "2016-06-17" txt_numero = "4084770193100046"/>    
-    <TB_CARTAO_CREDITO txt_bandeira = "MAESTRO" dt_expiracao = "2015-01-17" txt_numero = "6759744303415452"/>    
-    <TB_CARTAO_CREDITO txt_bandeira = "HIPERCARD" dt_expiracao = "2021-04-10" txt_numero = "4073020012000002"/>    
+     
 
         
 </dataset>

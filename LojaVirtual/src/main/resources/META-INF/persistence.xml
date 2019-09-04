@@ -11,6 +11,7 @@
     <class>descorp.jpa.Administrador</class>
     <class>descorp.jpa.UsuarioGeral</class>
     <class>descorp.jpa.ClienteUsuario</class>
+    <class>descorp.jpa.CartaoCredito</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/lojaVirtual"/>

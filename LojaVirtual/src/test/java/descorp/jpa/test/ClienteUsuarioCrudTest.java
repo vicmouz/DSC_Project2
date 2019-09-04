@@ -1,5 +1,3 @@
-
-
 package descorp.jpa.test;
 
 import descorp.jpa.CartaoCredito;
@@ -13,42 +11,37 @@ import javax.persistence.CacheRetrieveMode;
 import javax.persistence.TypedQuery;
 import org.junit.Test;
 import static org.junit.Assert.*;
- 
 
-public class ClienteUsuarioCrudTest extends GenericTest{
-     @Test
-  public void persistirClienteUsuario(){
+public class ClienteUsuarioCrudTest extends GenericTest {
+
+    @Test
+    public void persistirClienteUsuario() {
         logger.info("Executando persistirClienteUsuario()");
         ClienteUsuario cliente = criarClienteUsuario();
         em.persist(cliente);
         em.flush();
         assertNotNull(cliente.getId());
     }
-    
+
     @Test
     public void atualizarClienteUsuario() {
-      
+
         logger.info("Executando atualizarClienteUsuario()");
         String novoEmail = "cicrano_de_tal@gmail.com";
         String telefone = "(81) 40028922";
-        String fixo ="923423523";
+        String fixo = "923423523";
         Long id = 1l;
         ClienteUsuario cliente = em.find(ClienteUsuario.class, id);
         cliente.setEmail(novoEmail);
         cliente.setCelular(telefone);
         cliente.setFixo(fixo);
         em.flush();
-        /*String jpql = "SELECT c FROM TB_CLIENTEUSUARIO c WHERE c.id = ?1";
-        TypedQuery<ClienteUsuario> query = em.createQuery(jpql, ClienteUsuario.class);
-        query.setHint("javax.persistance.cache.retrieveMode", CacheRetrieveMode.BYPASS);
-        query.setParameter(1, id);
-        cliente = query.getSingleResult();
         assertEquals(novoEmail, cliente.getEmail());
-        if(cliente.getCelular().contains(telefone)){
-            System.out.println("Possui telefone!");*/
-        
+        assertEquals(telefone, cliente.getCelular());
+        assertEquals(fixo, cliente.getFixo());
+
     }
-    
+
     @Test
     public void atualizarClienteUsuarioMerge() {
         logger.info("Executando atualizarClienteUsuarioMerge()");
@@ -64,11 +57,10 @@ public class ClienteUsuarioCrudTest extends GenericTest{
         properties.put("javax.persistance.cache.retrieveMode", CacheRetrieveMode.BYPASS);
         cliente = em.find(ClienteUsuario.class, id, properties);
         assertEquals(novoEmail, cliente.getEmail());
-        if(cliente.getCelular().contains(telefone)){
-            System.out.println("Possui telefone!");
-        }
+        assertEquals(telefone, cliente.getCelular());
+
     }
-    
+
     @Test
     public void removerClienteUsuario() {
         logger.info("Executando removerClienteUsuario()");
@@ -90,14 +82,13 @@ public class ClienteUsuarioCrudTest extends GenericTest{
         cliente.setEndereco(criarEndereco());
         CartaoCredito cartaoCredito = criarCartaoCredito();
         cliente.setCartaoCredito(cartaoCredito);
-        
-        
+
         return cliente;
     }
 
     private EnderecoCliente criarEndereco() {
         EnderecoCliente ec = new EnderecoCliente();
-         ec.setNome("Avenida Paulista");
+        ec.setNome("Avenida Paulista");
         ec.setBairro("São Paulo");
         ec.setCep("424242442");
         ec.setCidade("São Paulo");
@@ -106,7 +97,8 @@ public class ClienteUsuarioCrudTest extends GenericTest{
         ec.setPais("BR");
         ec.setNumero("580");
         return ec;
-}
+    }
+
     public CartaoCredito criarCartaoCredito() {
         CartaoCredito cartaoCredito = new CartaoCredito();
         cartaoCredito.setBandeira("VISA");
