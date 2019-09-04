@@ -42,7 +42,9 @@ import org.hibernate.validator.constraints.NotBlank;
 public class ClienteUsuario extends UsuarioGeral implements Serializable {
 
 
-
+@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = true)
+@JoinColumn(name = "ID_CARTAO_CREDITO", referencedColumnName = "ID_CARTAO_CREDITO")
+private CartaoCredito cartaoCredito;
 
 @NotBlank(message = "DataNascimento não pode ser null/vazio")
 @Size(max = 20)
@@ -112,6 +114,15 @@ private List<Pedido> pedidoUsuario;
 
     public void setPedidoUsuario(List<Pedido> pedidoUsuario) {
         this.pedidoUsuario = pedidoUsuario;
+    }
+    
+    public CartaoCredito getCartaoCredito() {
+        return cartaoCredito;
+    }
+    
+    public void setCartaoCredito(CartaoCredito cartaoCredito) {
+        this.cartaoCredito = cartaoCredito;
+        this.cartaoCredito.setUsuario(this);
     }
 
 }

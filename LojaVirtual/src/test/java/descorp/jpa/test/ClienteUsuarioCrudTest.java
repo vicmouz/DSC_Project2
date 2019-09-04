@@ -2,6 +2,7 @@
 
 package descorp.jpa.test;
 
+import descorp.jpa.CartaoCredito;
 import descorp.jpa.ClienteUsuario;
 import descorp.jpa.EnderecoCliente;
 import descorp.jpa.UsuarioGeral;
@@ -87,6 +88,8 @@ public class ClienteUsuarioCrudTest extends GenericTest{
         cliente.setFixo("(81) 8922-4002");
         cliente.setDataNascimento("24242424");
         cliente.setEndereco(criarEndereco());
+        CartaoCredito cartaoCredito = criarCartaoCredito();
+        cliente.setCartaoCredito(cartaoCredito);
         
         
         return cliente;
@@ -104,4 +107,15 @@ public class ClienteUsuarioCrudTest extends GenericTest{
         ec.setNumero("580");
         return ec;
 }
+    public CartaoCredito criarCartaoCredito() {
+        CartaoCredito cartaoCredito = new CartaoCredito();
+        cartaoCredito.setBandeira("VISA");
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR, 2021);
+        c.set(Calendar.MONTH, Calendar.AUGUST);
+        c.set(Calendar.DAY_OF_MONTH, 10);
+        cartaoCredito.setDataExpiracao(c.getTime());
+        cartaoCredito.setNumero("4073000-100");
+        return cartaoCredito;
+    }
 }

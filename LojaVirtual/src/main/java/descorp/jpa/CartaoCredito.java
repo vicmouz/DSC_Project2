@@ -6,6 +6,7 @@
 package descorp.jpa;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,9 +21,9 @@ import javax.persistence.TemporalType;
  *
  * @author marcos
  */
-/*@Entity
+@Entity
 @Table(name = "TB_CARTAO_CREDITO")
-class CartaoCredito implements Serializable {
+public class CartaoCredito implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)    
     private Long id;  
@@ -33,8 +34,9 @@ class CartaoCredito implements Serializable {
     @Column(name = "TXT_NUMERO")
     private String numero;
    
-    @Column(name = "DT_EXPIRACAO")
-    private String dataExpiracao;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "DT_EXPIRACAO", nullable = false)
+    private Date dataExpiracao;
 
     public Long getId() {
         return id;
@@ -68,16 +70,12 @@ class CartaoCredito implements Serializable {
         this.numero = numero;
     }
 
-    public String getDataExpiracao() {
+    public Date getDataExpiracao() {
         return dataExpiracao;
     }
 
-    public void setDataExpiracao(String dataExpiracao) {
+    public void setDataExpiracao(Date dataExpiracao) {
         this.dataExpiracao = dataExpiracao;
     }
  
-    
-*/
-
-
-
+}

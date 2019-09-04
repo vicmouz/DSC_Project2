@@ -39,12 +39,10 @@ public class ProdutoCrudTest extends GenericTest {
     public void Atualizar(){
         logger.info("Executando atualizar()");
         String nome = "Camisa de Formatura";
-        int quantidade = 1000;
        
         Long id = 1l;
          Produto p =em.find(Produto.class, id);
         p.setNome(nome);
-        p.setQuantidade(quantidade);
         
         em.flush();   
         assertEquals(nome, p.getNome());
@@ -55,23 +53,15 @@ public class ProdutoCrudTest extends GenericTest {
     public void atualizarMerge() {
         logger.info("Executando atualizarMerge()");
         String nome = "Camisa de ABC";
-        int quantidade = 500;
-       
         Long id = 1l;
          Produto p =em.find(Produto.class, id);
         p.setNome(nome);
-        p.setQuantidade(quantidade);
-        
-        
         em.clear();
         em.merge(p);
         Map<String, Object> properties = new HashMap<>();
         properties.put("javax.persistance.cache.retrieveMode", CacheRetrieveMode.BYPASS);
         p = em.find(Produto.class, id, properties);
         assertEquals(nome, p.getNome());
-        if(p.getNome().contains(nome)){
-            System.out.println("Possui nome!");
-        }
     }
    
     @Test
