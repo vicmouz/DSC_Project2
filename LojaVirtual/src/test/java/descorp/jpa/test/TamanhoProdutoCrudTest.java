@@ -29,12 +29,10 @@ public class TamanhoProdutoCrudTest extends GenericTest{
     public void AtualizarTamanhoProduto(){
         logger.info("Executando atualizarTamanhoProduto()");
         String nome = "Enorme";
-        double largura = 93.5;
         
         Long id = 1l;
         TamanhoProduto tp = em.find(TamanhoProduto.class, id);
         tp.setNome(nome);
-        tp.setLargura(largura);
         em.flush(); 
         assertEquals(nome, tp.getNome());
         logger.info("Atualizado");
@@ -43,11 +41,9 @@ public class TamanhoProdutoCrudTest extends GenericTest{
     public void atualizarTPMerge() {
         logger.info("Executando atualizarTPMerge()");
         String nome="Minúsculo";
-        double comprimento= 1.3;
         Long id = 1l;
        TamanhoProduto tp = em.find(TamanhoProduto.class, id);
         tp.setNome(nome);
-        tp.setComprimento(comprimento);
         
         em.clear();
         em.merge(tp);
@@ -55,9 +51,6 @@ public class TamanhoProdutoCrudTest extends GenericTest{
         properties.put("javax.persistance.cache.retrieveMode", CacheRetrieveMode.BYPASS);
         tp = em.find(TamanhoProduto.class, id, properties);
         assertEquals(nome, tp.getNome());
-        if(tp.getNome().contains(nome)){
-            System.out.println("Possui nome!");
-        }
     }
     
     @Test

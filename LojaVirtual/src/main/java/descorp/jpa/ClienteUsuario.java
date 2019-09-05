@@ -61,7 +61,7 @@ private String fixo;
 private EnderecoCliente endereco;
 
 @Valid
-@OneToMany(mappedBy = "Clienteusuario",fetch = FetchType.LAZY, cascade = CascadeType.ALL,orphanRemoval = true)
+@OneToMany(mappedBy = "clienteusuario",fetch = FetchType.LAZY, cascade = CascadeType.ALL,orphanRemoval = true)
 private List<Pedido> pedidoUsuario;
 
 

@@ -45,7 +45,7 @@ public class CorProdutoCrudTest extends GenericTest {
         cp = em.find(CorProduto.class, id, properties);
         
         assertEquals(nome, cp.getNome());
-        //logger.info("Atualizado");
+        logger.info("Atualizado");
     }
 
     @Test
@@ -63,9 +63,6 @@ public class CorProdutoCrudTest extends GenericTest {
         properties.put("javax.persistance.cache.retrieveMode", CacheRetrieveMode.BYPASS);
         cp = em.find(CorProduto.class, id, properties);
         assertEquals(nome, cp.getNome());
-        /*if (cp.getNome().contains(nome)) {
-            System.out.println("Possui nome!");
-        }*/
     }
 
     @Test

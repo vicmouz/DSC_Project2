@@ -13,6 +13,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import org.eclipse.persistence.jpa.JpaCache;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -76,5 +77,9 @@ public class GenericTest {
         c.set(Calendar.MONTH, mes);
         c.set(Calendar.DAY_OF_MONTH, dia);
         return c.getTime();
+    }
+    protected void limparCache(){
+       ((JpaCache)  emf.getCache()).clear();
+        
     }
 }

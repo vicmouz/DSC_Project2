@@ -20,7 +20,7 @@ import org.junit.Test;
  */
 public class EnderecoClienteCrudTest extends GenericTest {
 
-   @Test
+    @Test
     public void persistir() {
         logger.info("Executando persistirEndereco()");
         EnderecoCliente ec = criarEndereco();
@@ -47,11 +47,11 @@ public class EnderecoClienteCrudTest extends GenericTest {
         Map<String, Object> properties = new HashMap<>();
         properties.put("javax.persistance.cache.retrieveMode", CacheRetrieveMode.BYPASS);
         ec = em.find(EnderecoCliente.class, id, properties);
-        //logger.info("Atualizado");
 
         assertEquals(nome, ec.getNome());
         assertEquals(numero, ec.getNumero());
         assertEquals(bairro, ec.getBairro());
+        logger.info("Atualizado");
     }
 
     @Test
@@ -76,10 +76,8 @@ public class EnderecoClienteCrudTest extends GenericTest {
         assertEquals(nome, ec.getNome());
         assertEquals(numero, ec.getNumero());
         assertEquals(bairro, ec.getBairro());
-        /*if(ec.getNome().contains(nome)){
-            System.out.println("Possui nome!");
-        }*/
-   }
+        logger.info("Atualizado");
+    }
 
     @Test
     public void remover() {

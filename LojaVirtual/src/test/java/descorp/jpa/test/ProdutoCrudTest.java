@@ -5,13 +5,10 @@
  */
 package descorp.jpa.test;
 
-import descorp.jpa.CorProduto;
 import descorp.jpa.ImagemProduto;
 import descorp.jpa.Produto;
-import descorp.jpa.TamanhoProduto;
 import descorp.jpa.TipoProduto;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import javax.persistence.CacheRetrieveMode;
 import static org.junit.Assert.assertEquals;

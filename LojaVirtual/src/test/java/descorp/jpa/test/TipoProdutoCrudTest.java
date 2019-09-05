@@ -44,7 +44,7 @@ public class TipoProdutoCrudTest extends GenericTest {
         properties.put("javax.persistance.cache.retrieveMode", CacheRetrieveMode.BYPASS);
         tp = em.find(TipoProduto.class, id, properties);
         assertEquals(nome, tp.getNome());
-        //logger.info("Atualizado");
+        logger.info("Atualizado");
     }
 
     @Test
@@ -59,11 +59,8 @@ public class TipoProdutoCrudTest extends GenericTest {
         em.merge(tp);
         Map<String, Object> properties = new HashMap<>();
         properties.put("javax.persistance.cache.retrieveMode", CacheRetrieveMode.BYPASS);
-        /*tp = em.find(TipoProduto.class, id, properties);
+        tp = em.find(TipoProduto.class, id, properties);
         assertEquals(nome, tp.getNome());
-        if (tp.getNome().contains(nome)) {
-            System.out.println("Possui nome!");
-        }*/
     }
 
     @Test

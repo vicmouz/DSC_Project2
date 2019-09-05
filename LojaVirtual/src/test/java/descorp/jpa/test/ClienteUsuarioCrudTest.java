@@ -8,7 +8,6 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 import javax.persistence.CacheRetrieveMode;
-import javax.persistence.TypedQuery;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -31,11 +30,14 @@ public class ClienteUsuarioCrudTest extends GenericTest {
         String telefone = "(81) 40028922";
         String fixo = "923423523";
         Long id = 1l;
-        ClienteUsuario cliente = em.find(ClienteUsuario.class, id);
+        ClienteUsuario cliente = em.find(ClienteUsuario.class, id); 
         cliente.setEmail(novoEmail);
         cliente.setCelular(telefone);
         cliente.setFixo(fixo);
         em.flush();
+        em.clear();
+         cliente = em.find(ClienteUsuario.class, id);
+        //Limpar a cache ou fazer a query ignorar a cache e fazer a consulta de novo
         assertEquals(novoEmail, cliente.getEmail());
         assertEquals(telefone, cliente.getCelular());
         assertEquals(fixo, cliente.getFixo());

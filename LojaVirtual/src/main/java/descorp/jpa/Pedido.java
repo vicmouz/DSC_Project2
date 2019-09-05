@@ -10,7 +10,6 @@ import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -23,12 +22,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-import org.hibernate.validator.constraints.NotBlank;
 import javax.validation.Valid;
 /**
  *
@@ -60,7 +56,7 @@ private Integer quantidade;
 @Valid
 @ManyToOne(fetch = FetchType.LAZY,optional = false)
 @JoinColumn(name = "CLIENTE_FK",referencedColumnName = "USUARIO_ID",insertable = true, updatable = true)
-  private ClienteUsuario Clienteusuario;
+  private ClienteUsuario clienteusuario;
 
 @Valid
 @ManyToMany
@@ -78,11 +74,11 @@ private Integer quantidade;
     }
 
     public ClienteUsuario getClienteusuario() {
-        return Clienteusuario;
+        return clienteusuario;
     }
 
     public void setClienteusuario(ClienteUsuario Clienteusuario) {
-        this.Clienteusuario = Clienteusuario;
+        this.clienteusuario = Clienteusuario;
     }
 
 
@@ -116,11 +112,11 @@ public boolean possui(String log){
     }
 
     public ClienteUsuario getUsuario() {
-        return Clienteusuario;
+        return clienteusuario;
     }
 
     public void setUsuario(ClienteUsuario usuario) {
-        this.Clienteusuario = usuario;
+        this.clienteusuario = usuario;
     }
 
     public List<Produto> getProduto() {
