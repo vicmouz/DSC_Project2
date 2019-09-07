@@ -70,7 +70,11 @@ public class CorProdutoCrudTest extends GenericTest {
         logger.info("Executando remover()");
         CorProduto cp = em.find(CorProduto.class, 1l);
         em.remove(cp);
-        CorProduto cp1 = em.find(CorProduto.class, 1l);
+        em.flush();
+        em.clear();
+        Map map = new HashMap();
+        map.put("javax.persistence.cache.retrieveMode", CacheRetrieveMode.BYPASS);
+        CorProduto cp1 = em.find(CorProduto.class, 1l, map);
         assertNull(cp1);
     }
 

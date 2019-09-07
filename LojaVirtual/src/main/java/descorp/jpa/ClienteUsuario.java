@@ -12,6 +12,7 @@ import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -55,9 +56,7 @@ private String celular;
 @Column(name="CLIENTE_FIXO",length=20)
 private String fixo;
 
-@Valid
-@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL,optional=false)
-@JoinColumn(name="CLIENTE_ENDERECOFK",referencedColumnName = "ENDERECO_ID",insertable = false, updatable = false)
+@Embedded
 private EnderecoCliente endereco;
 
 @Valid

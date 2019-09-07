@@ -6,21 +6,11 @@
 package descorp.jpa;
 import java.io.Serializable;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
 import javax.persistence.Column;
-import javax.persistence.ColumnResult;
-import javax.persistence.Entity;
-import javax.persistence.EntityResult;
+import javax.persistence.Embeddable;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedNativeQueries;
-import javax.persistence.NamedNativeQuery;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.SqlResultSetMapping;
-import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotBlank;
@@ -29,49 +19,9 @@ import org.hibernate.validator.constraints.NotBlank;
  *
  * @author marcosbrasileiro
  */
-@Entity
-@Table(name="TB_ENDERECOCLIENTE")
-@Access(AccessType.FIELD)
-@NamedQueries(
-        {
-            @NamedQuery(
-                    name = "EnderecoCliente.PorCep",
-                    query = "SELECT e FROM EnderecoCliente e WHERE e.cep LIKE :cep ORDER BY e.id"
-            ),
-            @NamedQuery(
-                    name = "EnderecoCliente.PorCidade",
-                    query = "SELECT e FROM EnderecoCliente e WHERE e.cidade LIKE :cidade ORDER BY e.id"
-            ),
-            @NamedQuery(
-                    name = "EnderecoCliente.PorNome",
-                    query = "SELECT e FROM EnderecoCliente e WHERE e.nome LIKE :nome ORDER BY e.id"
-            )
-                        }
-)
-@NamedNativeQueries(
-        {
-            @NamedNativeQuery(
-                    name = "EnderecoCliente.PorNumeroSQL",
-                    query = "SELECT ENDERECO_ID, ENDERECO_NOME, ENDERECO_NUMERO,ENDERECO_COMPLEMENTO,ENDERECO_BAIRRO,ENDERECO_CIDADE,ENDERECO_CEP,ENDERECO_ESTADO,ENDERECO_PAIS  FROM TB_ENDERECOCLIENTE WHERE ENDERECO_NUMERO LIKE ? ORDER BY ENDERECO_ID",
-                    resultClass = EnderecoCliente.class
-            )
-        }
-)
-@SqlResultSetMapping(
-        name = "EnderecoCliente.QuantidadeItens",
-        entities = {
-            @EntityResult(entityClass = EnderecoCliente.class)},
-        columns = {
-            @ColumnResult(name = "TOTAL_ITENS", type = Long.class)}
-)
+@Embeddable
 public class EnderecoCliente implements Serializable{
-    
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
- @Column(name="ENDERECO_ID")
- private Long id;
- 
-    
+        
  @NotNull
  @Size(max=100)
  @Column(name="ENDERECO_NOME")
@@ -181,14 +131,6 @@ public boolean possui(String nome){
 
     public void setPais(String pais) {
         this.pais = pais;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
  
 

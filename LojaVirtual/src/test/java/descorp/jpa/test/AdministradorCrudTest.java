@@ -83,7 +83,11 @@ public class AdministradorCrudTest extends GenericTest {
         logger.info("Executando removerADM()");
         Administrador adm = em.find(Administrador.class, 2l);
         em.remove(adm);
-        Administrador adm1 = em.find(Administrador.class, 2l);
+        em.flush();
+        em.clear();
+        Map map = new HashMap();
+        map.put("javax.persistence.cache.retrieveMode", CacheRetrieveMode.BYPASS);
+        Administrador adm1 = em.find(Administrador.class, 2l,map);
         assertNull(adm1);
     }
 

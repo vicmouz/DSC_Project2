@@ -3,8 +3,7 @@
   <persistence-unit name="lojaVirtual" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>descorp.jpa.Pedido</class>
-    <class>descorp.jpa.CorProduto</class>
-    <class>descorp.jpa.EnderecoCliente</class>
+    <class>descorp.jpa.CorProduto</class>    
     <class>descorp.jpa.TamanhoProduto</class>
     <class>descorp.jpa.TipoProduto</class>
     <class>descorp.jpa.Produto</class>

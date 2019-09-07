@@ -81,7 +81,11 @@ public class PedidoCrudTest extends GenericTest {
         logger.info("Executando remover()");
         Pedido p = em.find(Pedido.class, 1l);
         em.remove(p);
-        Pedido p1 = em.find(Pedido.class, 1l);
+        em.flush();
+        em.clear();
+        Map map = new HashMap();
+        map.put("javax.persistence.cache.retrieveMode", CacheRetrieveMode.BYPASS);
+        Pedido p1 = em.find(Pedido.class, 1l, map);
         assertNull(p1);
     }
 

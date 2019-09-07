@@ -36,8 +36,9 @@ public class ClienteUsuarioCrudTest extends GenericTest {
         cliente.setFixo(fixo);
         em.flush();
         em.clear();
-         cliente = em.find(ClienteUsuario.class, id);
-        //Limpar a cache ou fazer a query ignorar a cache e fazer a consulta de novo
+        Map<String, Object> properties = new HashMap<>();
+        properties.put("javax.persistance.cache.retrieveMode", CacheRetrieveMode.BYPASS);
+        cliente = em.find(ClienteUsuario.class, id, properties);        
         assertEquals(novoEmail, cliente.getEmail());
         assertEquals(telefone, cliente.getCelular());
         assertEquals(fixo, cliente.getFixo());
@@ -68,7 +69,11 @@ public class ClienteUsuarioCrudTest extends GenericTest {
         logger.info("Executando removerClienteUsuario()");
         ClienteUsuario cliente = em.find(ClienteUsuario.class, 1l);
         em.remove(cliente);
-        UsuarioGeral usuario = em.find(UsuarioGeral.class, 1l);
+        em.flush();
+        em.clear();
+        Map map = new HashMap();
+        map.put("javax.persistence.cache.retrieveMode", CacheRetrieveMode.BYPASS);
+        UsuarioGeral usuario = em.find(UsuarioGeral.class, 1l, map);
         assertNull(usuario);
     }
 

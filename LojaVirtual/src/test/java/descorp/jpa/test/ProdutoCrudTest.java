@@ -22,7 +22,7 @@ import org.junit.Test;
  */
 public class ProdutoCrudTest extends GenericTest {
     
-     @Test
+    @Test
     public void persistir(){
        logger.info("Executando persistir()");
         Produto p = criarProduto();
@@ -41,7 +41,12 @@ public class ProdutoCrudTest extends GenericTest {
          Produto p =em.find(Produto.class, id);
         p.setNome(nome);
         
-        em.flush();   
+        em.flush();
+        
+        Map map = new HashMap();
+        map.put("javax.persistence.cache.retrieveMode", CacheRetrieveMode.BYPASS);
+        
+        p = em.find(Produto.class, id, map);
         assertEquals(nome, p.getNome());
         
         logger.info("Atualizado");
@@ -66,7 +71,11 @@ public class ProdutoCrudTest extends GenericTest {
         logger.info("Executando remover()");
          Produto p = em.find(Produto.class, 2l);
         em.remove(p);
-        Produto  p1 = em.find(Produto.class, 2l);
+        em.flush();
+        em.clear();
+        Map<String, Object> properties = new HashMap<>();
+        properties.put("javax.persistance.cache.retrieveMode", CacheRetrieveMode.BYPASS);
+        Produto  p1 = em.find(Produto.class, 2l, properties);
         assertNull(p1);
     }
 
