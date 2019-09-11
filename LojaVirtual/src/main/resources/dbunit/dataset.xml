@@ -7,11 +7,11 @@
     <TB_TIPOPRODUTO  tipoproduto_nome="Garrafa"/>
     <TB_TIPOPRODUTO  tipoproduto_nome="Chaveiro" />
     
-    <TB_PRODUTO produto_id="1" produto_nome="Caneca grande" produto_descricao="Caneca do Thor"  produto_quantidade="400" produto_preco="23.5"/>
-    <TB_PRODUTO produto_id="2" produto_nome="Garrafa pequena" produto_descricao="Garrafa do Thor"  produto_quantidade="30" produto_preco="9.5"/>
-    <TB_PRODUTO produto_id="3" produto_nome="Camisa" produto_descricao="Camisa do Thor"  produto_quantidade="80" produto_preco="10.5"/>
-    <TB_PRODUTO produto_id="4" produto_nome="Chaveiro pequena" produto_descricao="Chaveiro do Hulk"  produto_quantidade="90" produto_preco="7.2"/>
-    <TB_PRODUTO produto_id="5" produto_nome="Boné Enorme" produto_descricao="Boné da Liga da Justiça"  produto_quantidade="100" produto_preco="1.23"/>
+    <TB_PRODUTO produto_id="1" produto_nome="Caneca grande" produto_descricao="Caneca do Thor"  produto_quantidade="400" produto_preco="23.5"  imagem_url="Teste base64"/>
+    <TB_PRODUTO produto_id="2" produto_nome="Garrafa pequena" produto_descricao="Garrafa do Thor"  produto_quantidade="30" produto_preco="9.5" imagem_url="Teste base64"/>
+    <TB_PRODUTO produto_id="3" produto_nome="Camisa" produto_descricao="Camisa do Thor"  produto_quantidade="80" produto_preco="10.5" imagem_url="Teste base64"/>
+    <TB_PRODUTO produto_id="4" produto_nome="Chaveiro pequena" produto_descricao="Chaveiro do Hulk"  produto_quantidade="90" produto_preco="7.2" imagem_url="Teste base64"/>
+    <TB_PRODUTO produto_id="5" produto_nome="Boné Enorme" produto_descricao="Boné da Liga da Justiça"  produto_quantidade="100" produto_preco="1.23" imagem_url="Teste base64"/>
   
     <TB_TAMANHOPRODUTO tamanhoproduto_id="1" tamanhoproduto_nome="Pequeno" tamanhoproduto_largura="23.5" tamanhoproduto_altura="22.1"
                        tamanhoproduto_comprimento="13.5" tamanhoproduto_tipo="Caneca" />
@@ -76,7 +76,7 @@
     <TB_PEDIDO_PRODUTO pedido_id="1" produto_id="3"/>
     <TB_PEDIDO_PRODUTO pedido_id="1" produto_id="4"/>
     <TB_PEDIDO_PRODUTO pedido_id="2" produto_id="5"/>
-    <!-- <TB_PRODUTO_TAMANHO produto_id="1" tamanhoproduto_id="1"/>-->
+    <TB_PRODUTO_TAMANHO produto_id="1" tamanhoproduto_id="1"/>
     <TB_CLIENTEUSUARIO usuario_id="1" cliente_datanascimento="2014-11-12 01:36:53" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "3" endereco_nome="Avenida do IFPE" endereco_numero="500"
                         endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="42343243"
                         endereco_estado="PE" endereco_pais="BR"/>

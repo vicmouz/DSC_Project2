@@ -5,6 +5,7 @@
  */
 package descorp.jpa;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 
@@ -16,6 +17,7 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class ImagemProduto{
    
+    @Column(name = "IMAGEM_URL")
     private String imageProduto;
 
     public String getImageProduto() {
