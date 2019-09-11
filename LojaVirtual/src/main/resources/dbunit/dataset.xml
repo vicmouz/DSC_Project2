@@ -36,18 +36,18 @@
     <TB_PRODUTO_COR produto_id="5" corproduto_id="5"/>
     <TB_PRODUTO_COR produto_id="1" corproduto_id="3"/>
     
-    <TB_ENDERECOCLIENTE endereco_id="1" endereco_nome="Avenida do IFPE" endereco_numero="500"
+    <!--<TB_ENDERECOCLIENTE endereco_nome="Avenida do IFPE" endereco_numero="500"
                         endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="42343243"
                         endereco_estado="PE" endereco_pais="BR"/>
-    <TB_ENDERECOCLIENTE endereco_id="2" endereco_nome="Avenida Recife" endereco_numero="222"
+    <TB_ENDERECOCLIENTE endereco_nome="Avenida Recife" endereco_numero="222"
                         endereco_complemento="Casa" endereco_bairro="Ipsep" endereco_cidade="Recife" endereco_cep="42"
                         endereco_estado="PE" endereco_pais="BR"/>
-    <TB_ENDERECOCLIENTE endereco_id="3" endereco_nome="Avenida de casa" endereco_numero="988"
+    <TB_ENDERECOCLIENTE endereco_nome="Avenida de casa" endereco_numero="988"
                         endereco_complemento="Apartamento" endereco_bairro="Estância" endereco_cidade="Recife" endereco_cep="98989"
                         endereco_estado="PE" endereco_pais="BR"/>
-    <TB_ENDERECOCLIENTE endereco_id="4" endereco_nome="Avenida Sul" endereco_numero="23223"
+    <TB_ENDERECOCLIENTE endereco_nome="Avenida Sul" endereco_numero="23223"
                         endereco_complemento="Viaduto" endereco_bairro="Boa Vista" endereco_cidade="Recife" endereco_cep="11111"
-                        endereco_estado="PE" endereco_pais="BR"/>
+                        endereco_estado="PE" endereco_pais="BR"/>-->
     
     <TB_CARTAO_CREDITO txt_bandeira = "VISA" dt_expiracao = "2024-04-10" txt_numero = "4073020000000002"/>    
     <TB_CARTAO_CREDITO txt_bandeira = "MASTERCARD" dt_expiracao = "2023-04-10" txt_numero = "5555666677778884"/>    
@@ -77,7 +77,9 @@
     <TB_PEDIDO_PRODUTO pedido_id="1" produto_id="4"/>
     <TB_PEDIDO_PRODUTO pedido_id="2" produto_id="5"/>
     <!-- <TB_PRODUTO_TAMANHO produto_id="1" tamanhoproduto_id="1"/>-->
-    <TB_CLIENTEUSUARIO usuario_id="1" cliente_datanascimento="2014-11-12 01:36:53" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "3"/>
+    <TB_CLIENTEUSUARIO usuario_id="1" cliente_datanascimento="2014-11-12 01:36:53" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "3" endereco_nome="Avenida do IFPE" endereco_numero="500"
+                        endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="42343243"
+                        endereco_estado="PE" endereco_pais="BR"/>
     
      
 
