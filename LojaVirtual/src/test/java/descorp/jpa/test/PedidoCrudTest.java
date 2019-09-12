@@ -5,6 +5,7 @@
  */
 package descorp.jpa.test;
 
+import descorp.jpa.ClienteUsuario;
 import descorp.jpa.Pedido;
 import descorp.jpa.StatusPedido;
 import java.util.HashMap;
@@ -95,7 +96,20 @@ public class PedidoCrudTest extends GenericTest {
         p.setLog("32klnsfknfjkasdas");
         p.setQuantidade(333);
         p.setStatus(StatusPedido.CANCELADO);
+        p.setClienteusuario(criarClienteUsuario());
         return p;
+    }
+    
+     private ClienteUsuario criarClienteUsuario() {
+        ClienteUsuario cliente = new ClienteUsuario();
+        cliente.setId(1l);
+        cliente.setNome("Cicrano Knittrel");
+        cliente.setEmail("rakin@gmail.com");
+        cliente.setCpf("100.639.154-13");
+        cliente.setCelular("(81) 4002-8922");
+        cliente.setFixo("(81) 8922-4002");
+        cliente.setDataNascimento("24242424");               
+        return cliente;
     }
 
 }

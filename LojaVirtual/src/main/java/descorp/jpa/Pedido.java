@@ -55,7 +55,7 @@ private Integer quantidade;
 
 @Valid
 @ManyToOne(fetch = FetchType.LAZY,optional = false)
-@JoinColumn(name = "CLIENTE_FK",referencedColumnName = "USUARIO_ID",insertable = true, updatable = true)
+@JoinColumn(name = "CLIENTE_FK",referencedColumnName = "USUARIO_ID",nullable = false)
   private ClienteUsuario clienteusuario;
 
 @Valid
