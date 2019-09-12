@@ -5,6 +5,7 @@
  */
 package descorp.jpa;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
@@ -15,7 +16,7 @@ import javax.persistence.Embeddable;
  * @author marcosbrasil98
  */
 @Embeddable
-public class ImagemProduto{
+public class ImagemProduto implements Serializable{
    
     @Column(name = "IMAGEM_URL")
     private String imageProduto;

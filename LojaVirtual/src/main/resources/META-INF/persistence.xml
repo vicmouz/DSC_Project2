@@ -13,7 +13,7 @@
     <class>descorp.jpa.CartaoCredito</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/lojavirtual"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/lojaVirtual"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value="root"/>

@@ -32,8 +32,8 @@ public class DbUnitUtil {
         IDatabaseConnection db_conn = null;
         try {
             conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/lojavirtual", "root", "root");
-            db_conn = new DatabaseConnection(conn, "lojavirtual");
+                    "jdbc:mysql://localhost:3306/lojaVirtual", "root", "root");
+            db_conn = new DatabaseConnection(conn, "lojaVirtual");
             DatabaseConfig dbConfig = db_conn.getConfig();
             dbConfig.setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new MySqlDataTypeFactory());
             dbConfig.setProperty(DatabaseConfig.PROPERTY_METADATA_HANDLER, new MySqlMetadataHandler());
