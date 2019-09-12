@@ -66,13 +66,13 @@ public class TipoProdutoCrudTest extends GenericTest {
     @Test
     public void removerTipoProduto() {
         logger.info("Executando removerTipoProduto()");
-        TipoProduto tp = em.find(TipoProduto.class, 2l);
+        TipoProduto tp = em.find(TipoProduto.class, 3l);
         em.remove(tp);
         em.flush();
         em.clear();
         Map<String, Object> properties = new HashMap<>();
         properties.put("javax.persistance.cache.retrieveMode", CacheRetrieveMode.BYPASS);
-        TipoProduto tp1 = em.find(TipoProduto.class, 2l,properties);
+        TipoProduto tp1 = em.find(TipoProduto.class, 3l,properties);
         assertNull(tp1);
     }
 

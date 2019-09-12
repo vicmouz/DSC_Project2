@@ -28,6 +28,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.validation.Valid;
+
 /**
  *
  * @author marcosbrasil98
@@ -43,54 +44,56 @@ import javax.validation.Valid;
             )
         }
 )
-public class Produto implements Serializable{
-  
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-@Column(name = "PRODUTO_ID")
-private Long id;
+public class Produto implements Serializable {
 
-@NotNull
-@Size(max = 30)
-@Column(name = "PRODUTO_NOME")
-private String nome;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "PRODUTO_ID")
+    private Long id;
 
-@Lob
-@Size(max = 300)
-@Column(name = "PRODUTO_DESCRICAO")
-private String descricao;
+    @NotNull
+    @Size(max = 30)
+    @Column(name = "PRODUTO_NOME")
+    private String nome;
 
-@NotNull
-@Column(name="PRODUTO_QUANTIDADE")
-private Integer quantidade;
+    @Lob
+    @Size(max = 300)
+    @Column(name = "PRODUTO_DESCRICAO")
+    private String descricao;
 
-@NotNull
-@Column(name = "PRODUTO_PRECO")
-private double preco;
+    @NotNull
+    @Column(name = "PRODUTO_QUANTIDADE")
+    private Integer quantidade;
 
-@Embedded
-private ImagemProduto imgProduto;
+    @NotNull
+    @Column(name = "PRODUTO_PRECO")
+    private double preco;
 
+    @Embedded
+    private ImagemProduto imgProduto;
 
+    @Valid
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = true)
+    @JoinColumn(name = "PRODUTO_TIPOPRODUTOFK", referencedColumnName = "TIPOPRODUTO_ID", insertable = true, updatable = true)
+    private TipoProduto tipoProduto;
 
-@Valid
-@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL,optional=false)
-@JoinColumn(name="PRODUTO_TIPOPRODUTOFK",referencedColumnName = "TIPOPRODUTO_ID",insertable = true, updatable = true)
-private TipoProduto tipoProduto;
+    @Valid
+    @ManyToMany
+    @JoinTable(name = "TB_PRODUTO_TAMANHO", joinColumns
+            = {
+                @JoinColumn(name = "PRODUTO_ID")}, inverseJoinColumns
+            = {
+                @JoinColumn(name = "TAMANHOPRODUTO_ID")})
+    private List<TamanhoProduto> tamanho;
 
-@Valid
-@ManyToMany
-    @JoinTable(name="TB_PRODUTO_TAMANHO", joinColumns=
-    {@JoinColumn(name="PRODUTO_ID")}, inverseJoinColumns=
-      {@JoinColumn(name="TAMANHOPRODUTO_ID")})
-private List<TamanhoProduto> tamanho;
-
-@Valid
-@ManyToMany
-    @JoinTable(name="TB_PRODUTO_COR", joinColumns=
-    {@JoinColumn(name="PRODUTO_ID")}, inverseJoinColumns=
-      {@JoinColumn(name="CORPRODUTO_ID")})
-private List<CorProduto> cor;
+    @Valid
+    @ManyToMany
+    @JoinTable(name = "TB_PRODUTO_COR", joinColumns
+            = {
+                @JoinColumn(name = "PRODUTO_ID")}, inverseJoinColumns
+            = {
+                @JoinColumn(name = "CORPRODUTO_ID")})
+    private List<CorProduto> cor;
 
     public ImagemProduto getImgProduto() {
         return imgProduto;
@@ -100,11 +103,9 @@ private List<CorProduto> cor;
         this.imgProduto = imgProduto;
     }
 
-
-   
-public boolean possui(String nome){
-       return nome.contains(nome);
-   }
+    public boolean possui(String nome) {
+        return nome.contains(nome);
+    }
 
     public Long getId() {
         return id;
@@ -146,7 +147,6 @@ public boolean possui(String nome){
         this.preco = preco;
     }
 
-  
     public TipoProduto getTipoProduto() {
         return tipoProduto;
     }
