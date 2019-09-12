@@ -6,6 +6,7 @@
 package descorp.jpa;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
@@ -20,6 +21,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -41,10 +44,9 @@ public class ClienteUsuario extends UsuarioGeral implements Serializable {
 @JoinColumn(name = "ID_CARTAO_CREDITO", referencedColumnName = "ID_CARTAO_CREDITO")
 private CartaoCredito cartaoCredito;
 
-@NotBlank(message = "DataNascimento não pode ser null/vazio")
-@Size(max = 20)
-@Column(name="CLIENTE_DATANASCIMENTO")
-private String dataNascimento;
+@Column(name="CLIENTE_DATANASCIMENTO", nullable = false)
+@Temporal(TemporalType.DATE)
+private Date dataNascimento;
 
 
 @NotNull (message = "Celular não pode ser null")
@@ -66,11 +68,11 @@ private List<Pedido> pedidoUsuario;
 
 
 
-    public String getDataNascimento() {
+    public Date getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(String dataNascimento) {
+    public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

@@ -48,12 +48,27 @@
     <TB_USUARIOGERAL usuario_id="4" usuario_cpf="1212121212" usuario_nome="4lan" usuario_email="4lan@gmail.com" usuario_tipo="C"/>
     <TB_USUARIOGERAL usuario_id="5" usuario_cpf="2424242424" usuario_nome="Kami Maria José" usuario_email="kmj@gmail.com" usuario_tipo="C"/>
     <TB_USUARIOGERAL usuario_id="6" usuario_cpf="7777777777" usuario_nome="Toboco" usuario_email="toboco@gmail.com" usuario_tipo="A"/>
+    <TB_USUARIOGERAL usuario_id="7" usuario_cpf="7333333333" usuario_nome="Felipe Yoda" usuario_email="felipe@gmail.com" usuario_tipo="C"/>
+    <TB_USUARIOGERAL usuario_id="8" usuario_cpf="3131313131" usuario_nome="Flavio Antonio" usuario_email="flavio@gmail.com" usuario_tipo="C"/>
 
+    
     <TB_ADMUSUARIO usuario_id="2" adm_permissao="Concedida"/>
     <TB_ADMUSUARIO usuario_id="3" adm_permissao="Não Concebida"/>
     <TB_ADMUSUARIO usuario_id="6" adm_permissao="Concedida"/>
     
-    <TB_CLIENTEUSUARIO usuario_id="1" cliente_datanascimento="2014-11-12 01:36:53" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "3" endereco_nome="Avenida do IFPE" endereco_numero="500"
+    <TB_CLIENTEUSUARIO usuario_id="1" cliente_datanascimento="1994-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "3" endereco_nome="Avenida do IFPE" endereco_numero="500"
+                        endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="42343243"
+                        endereco_estado="PE" endereco_pais="BR"/>
+    <TB_CLIENTEUSUARIO usuario_id="4" cliente_datanascimento="1994-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "2" endereco_nome="Avenida do IFPE" endereco_numero="500"
+                        endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="42343243"
+                        endereco_estado="PE" endereco_pais="BR"/>
+    <TB_CLIENTEUSUARIO usuario_id="5" cliente_datanascimento="1994-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "1" endereco_nome="Avenida do IFPE" endereco_numero="500"
+                        endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="42343243"
+                        endereco_estado="PE" endereco_pais="BR"/>
+    <TB_CLIENTEUSUARIO usuario_id="7" cliente_datanascimento="1994-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "4" endereco_nome="Avenida do IFPE" endereco_numero="500"
+                        endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="42343243"
+                        endereco_estado="PE" endereco_pais="BR"/>
+    <TB_CLIENTEUSUARIO usuario_id="8" cliente_datanascimento="1994-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "5" endereco_nome="Avenida do IFPE" endereco_numero="500"
                         endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="42343243"
                         endereco_estado="PE" endereco_pais="BR"/>
         

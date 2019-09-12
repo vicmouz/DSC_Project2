@@ -85,7 +85,11 @@ public class ClienteUsuarioCrudTest extends GenericTest {
         cliente.setCpf("100.639.154-13");
         cliente.setCelular("(81) 4002-8922");
         cliente.setFixo("(81) 8922-4002");
-        cliente.setDataNascimento("24242424");
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR, 1990);
+        c.set(Calendar.MONTH, Calendar.AUGUST);
+        c.set(Calendar.DAY_OF_MONTH, 10);
+        cliente.setDataNascimento(c.getTime());
         cliente.setEndereco(criarEndereco());
         CartaoCredito cartaoCredito = criarCartaoCredito();
         cliente.setCartaoCredito(cartaoCredito);
