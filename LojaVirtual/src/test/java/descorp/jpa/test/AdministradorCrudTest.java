@@ -32,7 +32,7 @@ public class AdministradorCrudTest extends GenericTest {
 
     private Administrador criarADM() {
       Administrador adm = new Administrador();
-      adm.setId(3l);
+     // adm.setId(3l);
       adm.setNome("Marcos Brasileiro");
       adm.setEmail("m@gmail.com");
       adm.setCpf("595.436.610-14");

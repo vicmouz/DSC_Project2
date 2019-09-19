@@ -43,13 +43,13 @@
     <TB_CARTAO_CREDITO txt_bandeira = "HIPERCARD" dt_expiracao = "2021-04-10" txt_numero = "4073020012000002"/>   
     
     <TB_USUARIOGERAL usuario_id="1" usuario_cpf="415.944.840-23" usuario_nome="Jukes da Silva" usuario_email="jk@gmail.com" usuario_tipo="C"/>
-    <TB_USUARIOGERAL usuario_id="2" usuario_cpf="8786781111" usuario_nome="Rakin de Paula" usuario_email="rp@gmail.com" usuario_tipo="A"/>
-    <TB_USUARIOGERAL usuario_id="3" usuario_cpf="3232323232" usuario_nome="Jovirone Franco" usuario_email="jf@gmail.com" usuario_tipo="A"/>
-    <TB_USUARIOGERAL usuario_id="4" usuario_cpf="1212121212" usuario_nome="4lan" usuario_email="4lan@gmail.com" usuario_tipo="C"/>
-    <TB_USUARIOGERAL usuario_id="5" usuario_cpf="2424242424" usuario_nome="Kami Maria José" usuario_email="kmj@gmail.com" usuario_tipo="C"/>
-    <TB_USUARIOGERAL usuario_id="6" usuario_cpf="7777777777" usuario_nome="Toboco" usuario_email="toboco@gmail.com" usuario_tipo="A"/>
-    <TB_USUARIOGERAL usuario_id="7" usuario_cpf="7333333333" usuario_nome="Felipe Yoda" usuario_email="felipe@gmail.com" usuario_tipo="C"/>
-    <TB_USUARIOGERAL usuario_id="8" usuario_cpf="3131313131" usuario_nome="Flavio Antonio" usuario_email="flavio@gmail.com" usuario_tipo="C"/>
+    <TB_USUARIOGERAL usuario_id="2" usuario_cpf="483.893.870-50" usuario_nome="Rakin de Paula" usuario_email="rp@gmail.com" usuario_tipo="A"/>
+    <TB_USUARIOGERAL usuario_id="3" usuario_cpf="521.211.180-39" usuario_nome="Jovirone Franco" usuario_email="jf@gmail.com" usuario_tipo="A"/>
+    <TB_USUARIOGERAL usuario_id="4" usuario_cpf="444.983.360-03" usuario_nome="4lan" usuario_email="4lan@gmail.com" usuario_tipo="C"/>
+    <TB_USUARIOGERAL usuario_id="5" usuario_cpf="875.889.580-90" usuario_nome="Kami Maria José" usuario_email="kmj@gmail.com" usuario_tipo="C"/>
+    <TB_USUARIOGERAL usuario_id="6" usuario_cpf="438.727.770-09" usuario_nome="Toboco" usuario_email="toboco@gmail.com" usuario_tipo="A"/>
+    <TB_USUARIOGERAL usuario_id="7" usuario_cpf="931.176.830-89" usuario_nome="Felipe Yoda" usuario_email="felipe@gmail.com" usuario_tipo="C"/>
+    <TB_USUARIOGERAL usuario_id="8" usuario_cpf="831.009.930-47" usuario_nome="Flavio Antonio" usuario_email="flavio@gmail.com" usuario_tipo="C"/>
 
     
     <TB_ADMUSUARIO usuario_id="2" adm_permissao="Concedida"/>

@@ -5,59 +5,50 @@
  */
 package descorp.jpa.test;
 
-import descorp.jpa.ClienteUsuario;
-import descorp.jpa.Pedido;
-import descorp.jpa.StatusPedido;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
-import javax.persistence.CacheRetrieveMode;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import org.junit.Test;
+import descorp.jpa.CartaoCredito;
+import descorp.jpa.ClienteUsuario;
+import javax.persistence.CacheRetrieveMode;
+import javax.validation.ConstraintViolationException;
 
 /**
  *
- * @author marcosbrasil98
+ * @author ALUNO
  */
-public class PedidoCrudTest extends GenericTest {
+public class CartaoCreditoCrudTest extends GenericTest {
 
     @Test
     public void persistir() {
         logger.info("Executando persistir()");
-        try{
-        Pedido p = criarPedido();
+        CartaoCredito p = criarCartao();
         em.persist(p);
         em.flush();
         assertNotNull(p.getId());
-        assertNotNull(p.getLog());
-        }catch(IllegalStateException e){
-            System.out.println(e.getMessage());
-        }
-                        
     }
 
     @Test
     public void Atualizar() {
-        logger.info("Executando atualizar()");
-        String log = "23232323";
-        
+        String num = "5472941627962395";
 
         Long id = 1l;
-        Pedido p = em.find(Pedido.class, id);
-        p.setLog(log);
-        p.setStatus(StatusPedido.ENTREGUE);
+        CartaoCredito c = em.find(CartaoCredito.class, id);
+        c.setNumero(num);
 
         em.flush();
 
         Map<String, Object> properties = new HashMap<>();
         properties.put("javax.persistance.cache.retrieveMode", CacheRetrieveMode.BYPASS);
-        p = em.find(Pedido.class, id, properties);
+        c = em.find(CartaoCredito.class, id, properties);
 
-        assertEquals(log, p.getLog());
-        
-        assertEquals(StatusPedido.ENTREGUE,p.getStatus());
+        assertEquals(num, c.getNumero());
+
+        logger.info("Executando atualizar()");
 
         logger.info("Atualizado");
     }
@@ -65,60 +56,60 @@ public class PedidoCrudTest extends GenericTest {
     @Test
     public void atualizarMerge() {
         logger.info("Executando atualizarMerge()");
-        String log = "2124b1l2j41bkhj";
-        
+        String num = "5472941627962395";
 
         Long id = 1l;
-        Pedido p = em.find(Pedido.class, id);
-        p.setLog(log);
-        p.setStatus(StatusPedido.ENTREGUE);
+        CartaoCredito c = em.find(CartaoCredito.class, id);
+        c.setNumero(num);
 
         em.clear();
-        em.merge(p);
+        em.merge(c);
         Map<String, Object> properties = new HashMap<>();
         properties.put("javax.persistance.cache.retrieveMode", CacheRetrieveMode.BYPASS);
-        p = em.find(Pedido.class, id, properties);
+        c = em.find(CartaoCredito.class, id, properties);
 
-        assertEquals(log, p.getLog());
-        assertEquals(StatusPedido.ENTREGUE,p.getStatus());
+        assertEquals(num, c.getNumero());
     }
 
     @Test
     public void remover() {
         logger.info("Executando remover()");
-        Pedido p = em.find(Pedido.class, 1l);
-        em.remove(p);
+        CartaoCredito c = em.find(CartaoCredito.class, 1l);
+        em.remove(c);
         em.flush();
         em.clear();
         Map map = new HashMap();
         map.put("javax.persistence.cache.retrieveMode", CacheRetrieveMode.BYPASS);
-        Pedido p1 = em.find(Pedido.class, 1l, map);
-        assertNull(p1);
+        CartaoCredito c1 = em.find(CartaoCredito.class, 1l, map);
+        assertNull(c1);
     }
 
-    private Pedido criarPedido() {
-        Pedido p = new Pedido();
-       // p.setId(6l);
-        p.setLog("32klnsfknfjkasdas");
-        p.setQuantidade(333);
-        p.setStatus(StatusPedido.CANCELADO);
-        p.setClienteusuario(criarClienteUsuario());
-        return p;
+    private CartaoCredito criarCartao() {
+        CartaoCredito c = new CartaoCredito();
+        c.setBandeira("Master");
+        Calendar data = Calendar.getInstance();
+        data.set(Calendar.YEAR, 2222);
+        data.set(Calendar.MONTH, Calendar.AUGUST);
+        data.set(Calendar.DAY_OF_MONTH, 10);
+        c.setDataExpiracao(data.getTime());
+        c.setNumero("5179847543153496");
+        c.setUsuario(criarClienteUsuario());
+        return c;
     }
-    
-     private ClienteUsuario criarClienteUsuario() {
+
+    private ClienteUsuario criarClienteUsuario() {
         ClienteUsuario cliente = new ClienteUsuario();
-       // cliente.setId(1l);
+        // cliente.setId(1l);
         cliente.setNome("Cicrano Knittrel");
         cliente.setEmail("rakin@gmail.com");
-        cliente.setCpf("108.346.210-53");
+        cliente.setCpf("797.141.400-56");
         cliente.setCelular("(81) 4002-8922");
         cliente.setFixo("(81) 8922-4002");
         Calendar c = Calendar.getInstance();
         c.set(Calendar.YEAR, 1997);
         c.set(Calendar.MONTH, Calendar.AUGUST);
         c.set(Calendar.DAY_OF_MONTH, 10);
-        cliente.setDataNascimento(c.getTime());               
+        cliente.setDataNascimento(c.getTime());
         return cliente;
     }
 
