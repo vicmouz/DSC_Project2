@@ -15,7 +15,6 @@ import org.junit.Test;
 import descorp.jpa.CartaoCredito;
 import descorp.jpa.ClienteUsuario;
 import javax.persistence.CacheRetrieveMode;
-import javax.validation.ConstraintViolationException;
 
 /**
  *
@@ -72,15 +71,15 @@ public class CartaoCreditoCrudTest extends GenericTest {
     }
 
     @Test
-    public void remover() {
-        logger.info("Executando remover()");
-        CartaoCredito c = em.find(CartaoCredito.class, 1l);
+    public void removerCartao() {
+        logger.info("Executando removerCartao()");
+        CartaoCredito c = em.find(CartaoCredito.class, 2l);
         em.remove(c);
         em.flush();
         em.clear();
         Map map = new HashMap();
         map.put("javax.persistence.cache.retrieveMode", CacheRetrieveMode.BYPASS);
-        CartaoCredito c1 = em.find(CartaoCredito.class, 1l, map);
+        CartaoCredito c1 = em.find(CartaoCredito.class, 2l, map);
         assertNull(c1);
     }
 
@@ -99,7 +98,7 @@ public class CartaoCreditoCrudTest extends GenericTest {
 
     private ClienteUsuario criarClienteUsuario() {
         ClienteUsuario cliente = new ClienteUsuario();
-        // cliente.setId(1l);
+        cliente.setId(4l);
         cliente.setNome("Cicrano Knittrel");
         cliente.setEmail("rakin@gmail.com");
         cliente.setCpf("797.141.400-56");

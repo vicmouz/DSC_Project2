@@ -26,18 +26,11 @@ public class PedidoCrudTest extends GenericTest {
     @Test
     public void persistir() {
         logger.info("Executando persistir()");
-        try{
         Pedido p = criarPedido();
         em.persist(p);
         em.flush();
         assertNotNull(p.getId());
         assertNotNull(p.getLog());
-<<<<<<< HEAD
-=======
-        }catch(IllegalStateException e){
-            System.out.println(e.getMessage());
-        }
->>>>>>> master
                         
     }
 
@@ -101,10 +94,6 @@ public class PedidoCrudTest extends GenericTest {
 
     private Pedido criarPedido() {
         Pedido p = new Pedido();
-<<<<<<< HEAD
-=======
-       // p.setId(6l);
->>>>>>> master
         p.setLog("32klnsfknfjkasdas");
         p.setQuantidade(333);
         p.setStatus(StatusPedido.CANCELADO);
@@ -114,16 +103,14 @@ public class PedidoCrudTest extends GenericTest {
     
      private ClienteUsuario criarClienteUsuario() {
         ClienteUsuario cliente = new ClienteUsuario();
-<<<<<<< HEAD
         cliente.setNome("Cicrano Knittrel");
         cliente.setEmail("rakin@gmail.com");
         cliente.setCpf("113.839.514-54");
-=======
-       // cliente.setId(1l);
+
+        cliente.setId(1l);
         cliente.setNome("Cicrano Knittrel");
         cliente.setEmail("rakin@gmail.com");
-        cliente.setCpf("108.346.210-53");
->>>>>>> master
+        cliente.setCpf("113.839.514-54");
         cliente.setCelular("(81) 4002-8922");
         cliente.setFixo("(81) 8922-4002");
         Calendar c = Calendar.getInstance();
