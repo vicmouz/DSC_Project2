@@ -79,7 +79,7 @@ public class ClienteUsuarioCrudTest extends GenericTest {
 
     private ClienteUsuario criarClienteUsuario() {
         ClienteUsuario cliente = new ClienteUsuario();
-       // cliente.setId(1l);
+        //cliente.setId(1l);
         cliente.setNome("Cicrano Knittrel");
         cliente.setEmail("rakin@gmail.com");
         cliente.setCpf("100.639.154-13");

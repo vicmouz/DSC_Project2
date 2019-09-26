@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package descorp.jpa;
+import descorp.validador.ValidaPais;
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -56,7 +57,8 @@ public class EnderecoCliente implements Serializable{
  private String estado;
  
  @NotNull
- @Size(max = 30)
+ @ValidaPais
+ @Size(max = 2)
  @Column(name="ENDERECO_PAIS")
  private String pais;
 
