@@ -21,6 +21,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
@@ -41,6 +43,19 @@ import javax.validation.Valid;
             @NamedQuery(
                     name = "Produto.PorNome",
                     query = "SELECT p FROM Produto p WHERE p.nome LIKE :nome ORDER BY p.quantidade"
+            )
+        }
+)
+@NamedNativeQueries(
+        {
+            @NamedNativeQuery(
+                    name = "InnerJoinProdutoTamanhoCor.PorIdSQL",
+                    query = "select TB_PRODUTO.PRODUTO_ID, TB_PRODUTO.PRODUTO_NOME, TB_PRODUTO_COR.CORPRODUTO_ID,TB_TAMANHOPRODUTO.TAMANHOPRODUTO_NOME ,TB_PRODUTO_TAMANHO.TAMANHOPRODUTO_ID\n"
+                    + "from ((( TB_PRODUTO\n"
+                    + "inner join TB_PRODUTO_COR on TB_PRODUTO.PRODUTO_ID = TB_PRODUTO_COR.PRODUTO_ID)\n"
+                    + "inner join TB_PRODUTO_TAMANHO on TB_PRODUTO.PRODUTO_ID = TB_PRODUTO.PRODUTO_ID)\n"
+                    + "inner join TB_TAMANHOPRODUTO on TB_PRODUTO_TAMANHO.TAMANHOPRODUTO_ID = TB_TAMANHOPRODUTO.TAMANHOPRODUTO_ID);",
+                    resultClass = Produto.class
             )
         }
 )

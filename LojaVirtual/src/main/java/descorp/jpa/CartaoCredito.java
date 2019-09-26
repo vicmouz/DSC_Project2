@@ -16,6 +16,9 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotNull;
 
 /**
  *
@@ -29,14 +32,21 @@ public class CartaoCredito implements Serializable {
     @Column(name = "ID_CARTAO_CREDITO")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    @Valid
     @OneToOne(mappedBy = "cartaoCredito", optional = false)
     private ClienteUsuario usuario;
+    
+    @NotNull (message = "Bandeira não pode ser null")
     @Column(name = "TXT_BANDEIRA")
     private String bandeira;
+
+    @NotNull (message = "Número não pode ser null")
     @Column(name = "TXT_NUMERO")
     private String numero;
 
     @Temporal(TemporalType.DATE)
+    @Future
     @Column(name = "DT_EXPIRACAO", nullable = false)
     private Date dataExpiracao;
 

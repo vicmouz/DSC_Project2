@@ -31,6 +31,18 @@ import org.hibernate.validator.constraints.NotBlank;
             @NamedQuery(
                     name = "Administrador.PorPermissao",
                     query = "SELECT a FROM Administrador a WHERE a.permissao LIKE :permissao ORDER BY a.id"
+            ),
+            @NamedQuery(
+                    name = "Administrador.PorNome",
+                    query = "SELECT a FROM UsuarioGeral a WHERE a.nome LIKE :nome ORDER BY a.id"
+            ),
+            @NamedQuery(
+                    name = "Administrador.PorCpf",
+                    query = "SELECT a FROM UsuarioGeral a WHERE a.cpf LIKE :cpf ORDER BY a.id"
+            ),
+            @NamedQuery(
+                    name = "Administrador.PorEmail",
+                    query = "SELECT a FROM UsuarioGeral a WHERE a.email LIKE :email ORDER BY a.id"
             )
         }
 )

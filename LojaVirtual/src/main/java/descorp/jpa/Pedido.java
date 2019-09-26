@@ -22,6 +22,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -33,6 +35,15 @@ import javax.validation.Valid;
 @Entity
 @Table(name="TB_PEDIDO")
 @Access(AccessType.FIELD)
+@NamedQueries(
+        {
+            @NamedQuery(
+                    name = "Pedido.PorLog",
+                    query = "SELECT p FROM Pedido p WHERE p.log LIKE :log ORDER BY p.id")
+            
+            
+                        }
+)
 public class Pedido implements Serializable{
 
 @Id

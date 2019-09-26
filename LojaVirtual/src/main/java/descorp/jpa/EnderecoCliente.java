@@ -9,6 +9,7 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -46,7 +47,6 @@ public class EnderecoCliente implements Serializable{
  
  @NotBlank
  @Size(max=20)
- 
  @Column(name="ENDERECO_CEP")
  private String cep;
  

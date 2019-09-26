@@ -7,29 +7,29 @@
     <TB_TIPOPRODUTO  tipoproduto_nome="Garrafa"/>
     <TB_TIPOPRODUTO  tipoproduto_nome="Chaveiro" />
     
-    <TB_PRODUTO produto_id="1" produto_nome="Caneca grande"    produto_descricao="Caneca do Thor"          produto_quantidade="400" produto_preco="23.5" imagem_url="Teste base64" produto_tipoprodutofk="4"/>
-    <TB_PRODUTO produto_id="2" produto_nome="Garrafa pequena"  produto_descricao="Garrafa do Thor"         produto_quantidade="30"  produto_preco="9.5"  imagem_url="Teste base64" produto_tipoprodutofk="5"/>
-    <TB_PRODUTO produto_id="3" produto_nome="Camisa"           produto_descricao="Camisa do Thor"          produto_quantidade="80"  produto_preco="10.5" imagem_url="Teste base64" produto_tipoprodutofk="1"/>
-    <TB_PRODUTO produto_id="4" produto_nome="Chaveiro pequena" produto_descricao="Chaveiro do Hulk"        produto_quantidade="90"  produto_preco="7.2"  imagem_url="Teste base64" produto_tipoprodutofk="6"/>
-    <TB_PRODUTO produto_id="5" produto_nome="Guitarra Les Paul"      produto_descricao="Guitarra Les Paul Vermelha" produto_quantidade="100" produto_preco="625.23" imagem_url="Teste base64" produto_tipoprodutofk="2"/>
+    <TB_PRODUTO produto_nome="Caneca grande"    produto_descricao="Caneca do Thor"          produto_quantidade="400" produto_preco="23.5" imagem_url="Teste base64" produto_tipoprodutofk="4"/>
+    <TB_PRODUTO produto_nome="Garrafa pequena"  produto_descricao="Garrafa do Thor"         produto_quantidade="30"  produto_preco="9.5"  imagem_url="Teste base64" produto_tipoprodutofk="5"/>
+    <TB_PRODUTO produto_nome="Camisa"           produto_descricao="Camisa do Thor"          produto_quantidade="80"  produto_preco="10.5" imagem_url="Teste base64" produto_tipoprodutofk="1"/>
+    <TB_PRODUTO produto_nome="Chaveiro pequena" produto_descricao="Chaveiro do Hulk"        produto_quantidade="90"  produto_preco="7.2"  imagem_url="Teste base64" produto_tipoprodutofk="6"/>
+    <TB_PRODUTO produto_nome="Guitarra Les Paul"      produto_descricao="Guitarra Les Paul Vermelha" produto_quantidade="100" produto_preco="625.23" imagem_url="Teste base64" produto_tipoprodutofk="2"/>
   
-    <TB_TAMANHOPRODUTO tamanhoproduto_id="1" tamanhoproduto_nome="Pequeno" tamanhoproduto_largura="23.5" tamanhoproduto_altura="22.1"
+    <TB_TAMANHOPRODUTO tamanhoproduto_nome="Pequeno" tamanhoproduto_largura="23.5" tamanhoproduto_altura="22.1"
                        tamanhoproduto_comprimento="13.5" tamanhoproduto_tipo="Caneca" />
-    <TB_TAMANHOPRODUTO tamanhoproduto_id="2" tamanhoproduto_nome="Grande" tamanhoproduto_largura="29.5" tamanhoproduto_altura="21.1"
+    <TB_TAMANHOPRODUTO tamanhoproduto_nome="Grande" tamanhoproduto_largura="29.5" tamanhoproduto_altura="21.1"
                        tamanhoproduto_comprimento="29.5" tamanhoproduto_tipo="Garrafa" />
-    <TB_TAMANHOPRODUTO tamanhoproduto_id="3" tamanhoproduto_nome="Médio" tamanhoproduto_largura="12" tamanhoproduto_altura="2.0"
+    <TB_TAMANHOPRODUTO tamanhoproduto_nome="Médio" tamanhoproduto_largura="12" tamanhoproduto_altura="2.0"
                        tamanhoproduto_comprimento="12.5" tamanhoproduto_tipo="Camisa" />
-    <TB_TAMANHOPRODUTO tamanhoproduto_id="4" tamanhoproduto_nome="Enorme" tamanhoproduto_largura="18" tamanhoproduto_altura="9.4"
+    <TB_TAMANHOPRODUTO tamanhoproduto_nome="Enorme" tamanhoproduto_largura="18" tamanhoproduto_altura="9.4"
                        tamanhoproduto_comprimento="54.2" tamanhoproduto_tipo="Chaveiro" />
-    <TB_TAMANHOPRODUTO tamanhoproduto_id="5" tamanhoproduto_nome="Minúsculo" tamanhoproduto_largura="10" tamanhoproduto_altura="3.3"
+    <TB_TAMANHOPRODUTO tamanhoproduto_nome="Minúsculo" tamanhoproduto_largura="10" tamanhoproduto_altura="3.3"
                        tamanhoproduto_comprimento="1.2" tamanhoproduto_tipo="Boné" />
     
     
-    <TB_CORPRODUTO corproduto_id="1" corproduto_nome="Azul"    corproduto_tipo="Caneca" />
-    <TB_CORPRODUTO corproduto_id="2" corproduto_nome="Verde"   corproduto_tipo="Garrafa" />
-    <TB_CORPRODUTO corproduto_id="3" corproduto_nome="Rosa"    corproduto_tipo="Chaveiro" />
-    <TB_CORPRODUTO corproduto_id="4" corproduto_nome="Amarelo" corproduto_tipo="Camisa"/>
-    <TB_CORPRODUTO corproduto_id="5" corproduto_nome="Marrom"  corproduto_tipo="Boné" />
+    <TB_CORPRODUTO corproduto_nome="Azul"    corproduto_tipo="Caneca" />
+    <TB_CORPRODUTO corproduto_nome="Verde"   corproduto_tipo="Garrafa" />
+    <TB_CORPRODUTO corproduto_nome="Rosa"    corproduto_tipo="Chaveiro" />
+    <TB_CORPRODUTO corproduto_nome="Amarelo" corproduto_tipo="Camisa"/>
+    <TB_CORPRODUTO corproduto_nome="Marrom"  corproduto_tipo="Boné" />
 
     <TB_PRODUTO_COR produto_id="1" corproduto_id="2"/>
     <TB_PRODUTO_COR produto_id="4" corproduto_id="4"/>
@@ -40,16 +40,16 @@
     <TB_CARTAO_CREDITO txt_bandeira = "MASTERCARD" dt_expiracao = "2023-04-10" txt_numero = "5555666677778884"/>    
     <TB_CARTAO_CREDITO txt_bandeira = "VISA" dt_expiracao = "2020-06-17" txt_numero = "4084770193100046"/>    
     <TB_CARTAO_CREDITO txt_bandeira = "MAESTRO" dt_expiracao = "2022-01-17" txt_numero = "6759744303415452"/>    
-    <TB_CARTAO_CREDITO txt_bandeira = "HIPERCARD" dt_expiracao = "2021-04-10" txt_numero = "4073020012000002"/>   
+    <TB_CARTAO_CREDITO txt_bandeira = "HIPERCARD" dt_expiracao = "2023-04-10" txt_numero = "4073020012000002"/>   
     
-    <TB_USUARIOGERAL usuario_id="1" usuario_cpf="415.944.840-23" usuario_nome="Jukes da Silva" usuario_email="jk@gmail.com" usuario_tipo="C"/>
-    <TB_USUARIOGERAL usuario_id="2" usuario_cpf="8786781111" usuario_nome="Rakin de Paula" usuario_email="rp@gmail.com" usuario_tipo="A"/>
-    <TB_USUARIOGERAL usuario_id="3" usuario_cpf="3232323232" usuario_nome="Jovirone Franco" usuario_email="jf@gmail.com" usuario_tipo="A"/>
-    <TB_USUARIOGERAL usuario_id="4" usuario_cpf="1212121212" usuario_nome="4lan" usuario_email="4lan@gmail.com" usuario_tipo="C"/>
-    <TB_USUARIOGERAL usuario_id="5" usuario_cpf="2424242424" usuario_nome="Kami Maria José" usuario_email="kmj@gmail.com" usuario_tipo="C"/>
-    <TB_USUARIOGERAL usuario_id="6" usuario_cpf="7777777777" usuario_nome="Toboco" usuario_email="toboco@gmail.com" usuario_tipo="A"/>
-    <TB_USUARIOGERAL usuario_id="7" usuario_cpf="7333333333" usuario_nome="Felipe Yoda" usuario_email="felipe@gmail.com" usuario_tipo="C"/>
-    <TB_USUARIOGERAL usuario_id="8" usuario_cpf="3131313131" usuario_nome="Flavio Antonio" usuario_email="flavio@gmail.com" usuario_tipo="C"/>
+    <TB_USUARIOGERAL usuario_cpf="415.944.840-23" usuario_nome="Jukes da Silva" usuario_email="jk@gmail.com" usuario_tipo="C"/>
+    <TB_USUARIOGERAL usuario_cpf="483.893.870-50" usuario_nome="Rakin de Paula" usuario_email="rp@gmail.com" usuario_tipo="A"/>
+    <TB_USUARIOGERAL usuario_cpf="521.211.180-39" usuario_nome="Jovirone Franco" usuario_email="jf@gmail.com" usuario_tipo="A"/>
+    <TB_USUARIOGERAL usuario_cpf="444.983.360-03" usuario_nome="4lan" usuario_email="4lan@gmail.com" usuario_tipo="C"/>
+    <TB_USUARIOGERAL usuario_cpf="875.889.580-90" usuario_nome="Kami Maria José" usuario_email="kmj@gmail.com" usuario_tipo="C"/>
+    <TB_USUARIOGERAL usuario_cpf="438.727.770-09" usuario_nome="Toboco" usuario_email="toboco@gmail.com" usuario_tipo="A"/>
+    <TB_USUARIOGERAL usuario_cpf="931.176.830-89" usuario_nome="Felipe Yoda" usuario_email="felipe@gmail.com" usuario_tipo="C"/>
+    <TB_USUARIOGERAL usuario_cpf="831.009.930-47" usuario_nome="Flavio Antonio" usuario_email="flavio@gmail.com" usuario_tipo="C"/>
 
     
     <TB_ADMUSUARIO usuario_id="2" adm_permissao="Concedida"/>
@@ -57,26 +57,26 @@
     <TB_ADMUSUARIO usuario_id="6" adm_permissao="Concedida"/>
     
     <TB_CLIENTEUSUARIO usuario_id="1" cliente_datanascimento="1994-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "3" endereco_nome="Avenida do IFPE" endereco_numero="500"
-                        endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="42343243"
+                        endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="77.024-141"
                         endereco_estado="PE" endereco_pais="BR"/>
     <TB_CLIENTEUSUARIO usuario_id="4" cliente_datanascimento="1994-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "2" endereco_nome="Avenida do IFPE" endereco_numero="500"
-                        endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="42343243"
+                        endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="77.024-142"
                         endereco_estado="PE" endereco_pais="BR"/>
     <TB_CLIENTEUSUARIO usuario_id="5" cliente_datanascimento="1994-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "1" endereco_nome="Avenida do IFPE" endereco_numero="500"
-                        endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="42343243"
+                        endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="77.024-143"
                         endereco_estado="PE" endereco_pais="BR"/>
     <TB_CLIENTEUSUARIO usuario_id="7" cliente_datanascimento="1994-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "4" endereco_nome="Avenida do IFPE" endereco_numero="500"
-                        endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="42343243"
+                        endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="77.024-144"
                         endereco_estado="PE" endereco_pais="BR"/>
     <TB_CLIENTEUSUARIO usuario_id="8" cliente_datanascimento="1994-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "5" endereco_nome="Avenida do IFPE" endereco_numero="500"
-                        endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="42343243"
+                        endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="77.024-145"
                         endereco_estado="PE" endereco_pais="BR"/>
         
-    <TB_PEDIDO pedido_id="1" pedido_log="rqqw4qw42" pedido_quantidade="323" pedido_status="ANDAMENTO" cliente_fk="1"/>
-    <TB_PEDIDO pedido_id="2" pedido_log="232323232" pedido_quantidade="200" pedido_status="ANDAMENTO" cliente_fk="1"/>
-    <TB_PEDIDO pedido_id="3" pedido_log="fsfs42352" pedido_quantidade="1"   pedido_status="ANDAMENTO" cliente_fk="1" />
-    <TB_PEDIDO pedido_id="4" pedido_log="fsfs64647" pedido_quantidade="25"  pedido_status="ANDAMENTO" cliente_fk="1" />
-    <TB_PEDIDO pedido_id="5" pedido_log="nff979767" pedido_quantidade="100" pedido_status="ANDAMENTO" cliente_fk="1" />
+    <TB_PEDIDO pedido_log="rqqw4qw42" pedido_quantidade="323" pedido_status="ANDAMENTO" cliente_fk="1"/>
+    <TB_PEDIDO pedido_log="232323232" pedido_quantidade="200" pedido_status="ANDAMENTO" cliente_fk="1"/>
+    <TB_PEDIDO pedido_log="fsfs42352" pedido_quantidade="1"   pedido_status="ANDAMENTO" cliente_fk="1" />
+    <TB_PEDIDO pedido_log="fsfs64647" pedido_quantidade="25"  pedido_status="ANDAMENTO" cliente_fk="1" />
+    <TB_PEDIDO pedido_log="nff979767" pedido_quantidade="100" pedido_status="ANDAMENTO" cliente_fk="1" />
 
     <TB_PEDIDO_PRODUTO pedido_id="1" produto_id="1"/>
     <TB_PEDIDO_PRODUTO pedido_id="1" produto_id="3"/>

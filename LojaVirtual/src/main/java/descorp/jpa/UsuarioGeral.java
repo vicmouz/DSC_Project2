@@ -55,7 +55,6 @@ private String email;
 
 @NotBlank(message = "CPF não pode ser null")
 @CPF
-
 @Column(name="USUARIO_CPF")
 private String cpf;
 
