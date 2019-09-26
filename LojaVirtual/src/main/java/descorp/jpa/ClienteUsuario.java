@@ -63,7 +63,7 @@ import org.hibernate.validator.constraints.NotBlank;
 public class ClienteUsuario extends UsuarioGeral implements Serializable {
 
 
-@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = true)
+@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
 @JoinColumn(name = "ID_CARTAO_CREDITO", referencedColumnName = "ID_CARTAO_CREDITO")
 private CartaoCredito cartaoCredito;
 

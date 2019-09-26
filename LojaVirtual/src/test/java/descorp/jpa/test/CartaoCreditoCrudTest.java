@@ -15,6 +15,7 @@ import org.junit.Test;
 import descorp.jpa.CartaoCredito;
 import descorp.jpa.ClienteUsuario;
 import javax.persistence.CacheRetrieveMode;
+import javax.validation.ConstraintViolationException;
 
 /**
  *
@@ -38,7 +39,7 @@ public class CartaoCreditoCrudTest extends GenericTest {
         Long id = 1l;
         CartaoCredito c = em.find(CartaoCredito.class, id);
         c.setNumero(num);
-        
+
         em.flush();
 
         Map<String, Object> properties = new HashMap<>();
@@ -73,14 +74,13 @@ public class CartaoCreditoCrudTest extends GenericTest {
     @Test
     public void remover() {
         logger.info("Executando remover()");
-        Long id = 3L;
-        CartaoCredito c = em.find(CartaoCredito.class, id);
+        CartaoCredito c = em.find(CartaoCredito.class, 1l);
         em.remove(c);
         em.flush();
         em.clear();
         Map map = new HashMap();
         map.put("javax.persistence.cache.retrieveMode", CacheRetrieveMode.BYPASS);
-        CartaoCredito c1 = em.find(CartaoCredito.class, id, map);
+        CartaoCredito c1 = em.find(CartaoCredito.class, 1l, map);
         assertNull(c1);
     }
 
@@ -88,7 +88,7 @@ public class CartaoCreditoCrudTest extends GenericTest {
         CartaoCredito c = new CartaoCredito();
         c.setBandeira("Master");
         Calendar data = Calendar.getInstance();
-        data.set(Calendar.YEAR, 2023);
+        data.set(Calendar.YEAR, 2222);
         data.set(Calendar.MONTH, Calendar.AUGUST);
         data.set(Calendar.DAY_OF_MONTH, 10);
         c.setDataExpiracao(data.getTime());
@@ -99,7 +99,7 @@ public class CartaoCreditoCrudTest extends GenericTest {
 
     private ClienteUsuario criarClienteUsuario() {
         ClienteUsuario cliente = new ClienteUsuario();
-        cliente.setId(1l);
+        // cliente.setId(1l);
         cliente.setNome("Cicrano Knittrel");
         cliente.setEmail("rakin@gmail.com");
         cliente.setCpf("797.141.400-56");
