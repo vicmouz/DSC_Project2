@@ -42,14 +42,14 @@
     <TB_CARTAO_CREDITO txt_bandeira = "MAESTRO" dt_expiracao = "2022-01-17" txt_numero = "6759744303415452"/>    
     <TB_CARTAO_CREDITO txt_bandeira = "HIPERCARD" dt_expiracao = "2023-04-10" txt_numero = "4073020012000002"/>   
     
-    <TB_USUARIOGERAL usuario_id="1" usuario_cpf="415.944.840-23" usuario_nome="Jukes da Silva" usuario_email="jk@gmail.com" usuario_tipo="C"/>
-    <TB_USUARIOGERAL usuario_id="2" usuario_cpf="483.893.870-50" usuario_nome="Rakin de Paula" usuario_email="rp@gmail.com" usuario_tipo="A"/>
-    <TB_USUARIOGERAL usuario_id="3" usuario_cpf="521.211.180-39" usuario_nome="Jovirone Franco" usuario_email="jf@gmail.com" usuario_tipo="A"/>
-    <TB_USUARIOGERAL usuario_id="4" usuario_cpf="444.983.360-03" usuario_nome="4lan" usuario_email="4lan@gmail.com" usuario_tipo="C"/>
-    <TB_USUARIOGERAL usuario_id="5" usuario_cpf="875.889.580-90" usuario_nome="Kami Maria José" usuario_email="kmj@gmail.com" usuario_tipo="C"/>
-    <TB_USUARIOGERAL usuario_id="6" usuario_cpf="438.727.770-09" usuario_nome="Toboco" usuario_email="toboco@gmail.com" usuario_tipo="A"/>
-    <TB_USUARIOGERAL usuario_id="7" usuario_cpf="931.176.830-89" usuario_nome="Felipe Yoda" usuario_email="felipe@gmail.com" usuario_tipo="C"/>
-    <TB_USUARIOGERAL usuario_id="8" usuario_cpf="831.009.930-47" usuario_nome="Flavio Antonio" usuario_email="flavio@gmail.com" usuario_tipo="C"/>
+    <TB_USUARIOGERAL  usuario_cpf="415.944.840-23" usuario_nome="Jukes da Silva" usuario_email="jk@gmail.com" usuario_tipo="C"/>
+    <TB_USUARIOGERAL  usuario_cpf="483.893.870-50" usuario_nome="Rakin de Paula" usuario_email="rp@gmail.com" usuario_tipo="A"/>
+    <TB_USUARIOGERAL  usuario_cpf="521.211.180-39" usuario_nome="Jovirone Franco" usuario_email="jf@gmail.com" usuario_tipo="A"/>
+    <TB_USUARIOGERAL  usuario_cpf="444.983.360-03" usuario_nome="4lan" usuario_email="4lan@gmail.com" usuario_tipo="C"/>
+    <TB_USUARIOGERAL  usuario_cpf="875.889.580-90" usuario_nome="Kami Maria José" usuario_email="kmj@gmail.com" usuario_tipo="C"/>
+    <TB_USUARIOGERAL  usuario_cpf="438.727.770-09" usuario_nome="Toboco" usuario_email="toboco@gmail.com" usuario_tipo="A"/>
+    <TB_USUARIOGERAL  usuario_cpf="931.176.830-89" usuario_nome="Felipe Yoda" usuario_email="felipe@gmail.com" usuario_tipo="C"/>
+    <TB_USUARIOGERAL  usuario_cpf="831.009.930-47" usuario_nome="Flavio Antonio" usuario_email="flavio@gmail.com" usuario_tipo="C"/>
 
     
     <TB_ADMUSUARIO usuario_id="2" adm_permissao="Concedida"/>
@@ -61,16 +61,16 @@
                         endereco_estado="PE" endereco_pais="BR"/>
     <TB_CLIENTEUSUARIO usuario_id="4" cliente_datanascimento="1994-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "2" endereco_nome="Avenida do IFPE" endereco_numero="500"
                         endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="77.024-142"
-                        endereco_estado="PE" endereco_pais="BR"/>
+                        endereco_estado="PE" endereco_pais="FR"/>
     <TB_CLIENTEUSUARIO usuario_id="5" cliente_datanascimento="1994-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "1" endereco_nome="Avenida do IFPE" endereco_numero="500"
                         endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="77.024-143"
-                        endereco_estado="PE" endereco_pais="BR"/>
+                        endereco_estado="PE" endereco_pais="PT"/>
     <TB_CLIENTEUSUARIO usuario_id="7" cliente_datanascimento="1994-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "4" endereco_nome="Avenida do IFPE" endereco_numero="500"
                         endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="77.024-144"
-                        endereco_estado="PE" endereco_pais="BR"/>
+                        endereco_estado="PE" endereco_pais="ES"/>
     <TB_CLIENTEUSUARIO usuario_id="8" cliente_datanascimento="1994-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "5" endereco_nome="Avenida do IFPE" endereco_numero="500"
                         endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="77.024-145"
-                        endereco_estado="PE" endereco_pais="BR"/>
+                        endereco_estado="PE" endereco_pais="AR"/>
         
     <TB_PEDIDO pedido_log="rqqw4qw42" pedido_quantidade="323" pedido_status="ANDAMENTO" cliente_fk="1"/>
     <TB_PEDIDO pedido_log="232323232" pedido_quantidade="200" pedido_status="ANDAMENTO" cliente_fk="1"/>

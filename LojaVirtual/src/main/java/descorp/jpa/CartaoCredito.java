@@ -7,6 +7,7 @@ package descorp.jpa;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,7 +35,7 @@ public class CartaoCredito implements Serializable {
     private Long id;
     
     @Valid
-    @OneToOne(mappedBy = "cartaoCredito", optional = false)
+    @OneToOne(mappedBy = "cartaoCredito", optional = false, cascade = CascadeType.ALL)
     private ClienteUsuario usuario;
     
     @NotNull (message = "Bandeira não pode ser null")
