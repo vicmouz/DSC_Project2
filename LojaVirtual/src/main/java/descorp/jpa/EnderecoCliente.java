@@ -131,6 +131,10 @@ public boolean possui(String nome){
     public void setPais(String pais) {
         this.pais = pais;
     }
+
+    public boolean isEmpty() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
  
 
 

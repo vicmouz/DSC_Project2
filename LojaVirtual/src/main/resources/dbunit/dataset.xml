@@ -38,7 +38,7 @@
       
     <TB_CARTAO_CREDITO txt_bandeira = "VISA" dt_expiracao = "2024-04-10" txt_numero = "4073020000000002"/>    
     <TB_CARTAO_CREDITO txt_bandeira = "MASTERCARD" dt_expiracao = "2023-04-10" txt_numero = "5555666677778884"/>    
-    <TB_CARTAO_CREDITO txt_bandeira = "VISA" dt_expiracao = "2020-06-17" txt_numero = "4084770193100046"/>    
+    <TB_CARTAO_CREDITO txt_bandeira = "VISA" dt_expiracao = "2015-06-17" txt_numero = "4084770193100046"/>    
     <TB_CARTAO_CREDITO txt_bandeira = "MAESTRO" dt_expiracao = "2022-01-17" txt_numero = "6759744303415452"/>    
     <TB_CARTAO_CREDITO txt_bandeira = "HIPERCARD" dt_expiracao = "2023-04-10" txt_numero = "4073020012000002"/>   
     
@@ -56,7 +56,7 @@
     <TB_ADMUSUARIO usuario_id="3" adm_permissao="Não Concebida"/>
     <TB_ADMUSUARIO usuario_id="6" adm_permissao="Concedida"/>
     
-    <TB_CLIENTEUSUARIO usuario_id="1" cliente_datanascimento="1994-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "3" endereco_nome="Avenida do IFPE" endereco_numero="500"
+    <TB_CLIENTEUSUARIO usuario_id="1" cliente_datanascimento="1991-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "3" endereco_nome="Avenida do IFPE" endereco_numero="500"
                         endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="77.024-141"
                         endereco_estado="PE" endereco_pais="BR"/>
     <TB_CLIENTEUSUARIO usuario_id="4" cliente_datanascimento="1994-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "2" endereco_nome="Avenida do IFPE" endereco_numero="500"
@@ -65,18 +65,18 @@
     <TB_CLIENTEUSUARIO usuario_id="5" cliente_datanascimento="1994-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "1" endereco_nome="Avenida do IFPE" endereco_numero="500"
                         endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="77.024-143"
                         endereco_estado="PE" endereco_pais="PT"/>
-    <TB_CLIENTEUSUARIO usuario_id="7" cliente_datanascimento="1994-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "4" endereco_nome="Avenida do IFPE" endereco_numero="500"
+    <TB_CLIENTEUSUARIO usuario_id="7" cliente_datanascimento="2000-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "4" endereco_nome="Avenida do IFPE" endereco_numero="500"
                         endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="77.024-144"
                         endereco_estado="PE" endereco_pais="ES"/>
-    <TB_CLIENTEUSUARIO usuario_id="8" cliente_datanascimento="1994-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "5" endereco_nome="Avenida do IFPE" endereco_numero="500"
+    <TB_CLIENTEUSUARIO usuario_id="8" cliente_datanascimento="1999-04-10" cliente_celular="323232" cliente_fixo="3232324" id_cartao_credito = "5" endereco_nome="Avenida do IFPE" endereco_numero="500"
                         endereco_complemento="Instituto" endereco_bairro="Curado" endereco_cidade="Recife" endereco_cep="77.024-145"
                         endereco_estado="PE" endereco_pais="AR"/>
         
     <TB_PEDIDO pedido_log="rqqw4qw42" pedido_quantidade="323" pedido_status="ANDAMENTO" cliente_fk="1"/>
-    <TB_PEDIDO pedido_log="232323232" pedido_quantidade="200" pedido_status="ANDAMENTO" cliente_fk="1"/>
+    <TB_PEDIDO pedido_log="232323232" pedido_quantidade="200" pedido_status="CANCELADO" cliente_fk="1"/>
     <TB_PEDIDO pedido_log="fsfs42352" pedido_quantidade="1"   pedido_status="ANDAMENTO" cliente_fk="1" />
-    <TB_PEDIDO pedido_log="fsfs64647" pedido_quantidade="25"  pedido_status="ANDAMENTO" cliente_fk="1" />
-    <TB_PEDIDO pedido_log="nff979767" pedido_quantidade="100" pedido_status="ANDAMENTO" cliente_fk="1" />
+    <TB_PEDIDO pedido_log="fsfs64647" pedido_quantidade="25"  pedido_status="CANCELADO" cliente_fk="1" />
+    <TB_PEDIDO pedido_log="nff979767" pedido_quantidade="100" pedido_status="ENTREGUE" cliente_fk="1" />
 
     <TB_PEDIDO_PRODUTO pedido_id="1" produto_id="1"/>
     <TB_PEDIDO_PRODUTO pedido_id="1" produto_id="3"/>

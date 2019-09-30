@@ -13,6 +13,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -27,6 +29,22 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "TB_CARTAO_CREDITO")
+@NamedQueries(
+        {
+            @NamedQuery(
+                    name = "CartaoCredito.PorBandeira",
+                    query = "SELECT c FROM CartaoCredito c WHERE c.bandeira LIKE :nome ORDER BY c.id"),
+            @NamedQuery(
+                    name = "CartaoCredito.PorNumero",
+                    query = "SELECT c FROM CartaoCredito c WHERE c.numero LIKE :numero ORDER BY c.id"
+            ),
+            @NamedQuery(
+                    name = "CartaoCredito.PorData",
+                    query = "SELECT c FROM CartaoCredito c WHERE c.dataExpiracao LIKE :data ORDER BY c.id"
+            )
+           
+                        }
+)
 public class CartaoCredito implements Serializable {
 
     @Id
@@ -47,7 +65,7 @@ public class CartaoCredito implements Serializable {
     private String numero;
 
     @Temporal(TemporalType.DATE)
-    @Future
+    
     @Column(name = "DT_EXPIRACAO", nullable = false)
     private Date dataExpiracao;
 
@@ -89,6 +107,10 @@ public class CartaoCredito implements Serializable {
 
     public void setDataExpiracao(Date dataExpiracao) {
         this.dataExpiracao = dataExpiracao;
+    }
+
+    public boolean isEmpty() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
