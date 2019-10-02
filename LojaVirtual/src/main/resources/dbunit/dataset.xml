@@ -6,12 +6,14 @@
     <TB_TIPOPRODUTO  tipoproduto_nome="Caneca" />
     <TB_TIPOPRODUTO  tipoproduto_nome="Garrafa"/>
     <TB_TIPOPRODUTO  tipoproduto_nome="Chaveiro" />
+    <TB_TIPOPRODUTO  tipoproduto_nome="Bola" />
     
     <TB_PRODUTO produto_nome="Caneca grande"    produto_descricao="Caneca do Thor"          produto_quantidade="400" produto_preco="23.5" imagem_url="Teste base64" produto_tipoprodutofk="4"/>
     <TB_PRODUTO produto_nome="Garrafa pequena"  produto_descricao="Garrafa do Thor"         produto_quantidade="30"  produto_preco="9.5"  imagem_url="Teste base64" produto_tipoprodutofk="5"/>
     <TB_PRODUTO produto_nome="Camisa"           produto_descricao="Camisa do Thor"          produto_quantidade="80"  produto_preco="10.5" imagem_url="Teste base64" produto_tipoprodutofk="1"/>
     <TB_PRODUTO produto_nome="Chaveiro pequena" produto_descricao="Chaveiro do Hulk"        produto_quantidade="90"  produto_preco="7.2"  imagem_url="Teste base64" produto_tipoprodutofk="6"/>
     <TB_PRODUTO produto_nome="Guitarra Les Paul"      produto_descricao="Guitarra Les Paul Vermelha" produto_quantidade="100" produto_preco="625.23" imagem_url="Teste base64" produto_tipoprodutofk="2"/>
+    
   
     <TB_TAMANHOPRODUTO tamanhoproduto_nome="Pequeno" tamanhoproduto_largura="23.5" tamanhoproduto_altura="22.1"
                        tamanhoproduto_comprimento="13.5" tamanhoproduto_tipo="Caneca" />

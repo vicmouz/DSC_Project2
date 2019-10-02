@@ -40,7 +40,7 @@ public class TipoProdutoUpdateQuery extends GenericTest {
     @Test(expected = ConstraintViolationException.class)
     public void invalidQueryUpdate() {
         TypedQuery<TipoProduto> query = em.createQuery("SELECT c FROM TipoProduto c WHERE c.id = :id", TipoProduto.class);
-        query.setParameter("id", 2L);
+        query.setParameter("id", 3L);
         TipoProduto tipo = query.getSingleResult();
         tipo.setNome(null);
 
@@ -56,7 +56,7 @@ public class TipoProdutoUpdateQuery extends GenericTest {
 
     @Test(expected = NoResultException.class)
     public void queryDelete() {
-        Long id = 3L;
+        Long id = 7L;
         Query delete = em.createQuery("DELETE FROM TipoProduto AS c WHERE c.id = ?1");
         delete.setParameter(1, id);
         delete.executeUpdate();

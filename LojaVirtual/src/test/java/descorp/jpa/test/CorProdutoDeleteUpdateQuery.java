@@ -23,7 +23,7 @@ public class CorProdutoDeleteUpdateQuery extends GenericTest {
 
     @Test
     public void queryUpdate() {
-        Long id = 1L;
+        Long id = 2L;
         String novoNome = "Prateado";
         Query update = em.createQuery("UPDATE CorProduto AS c SET c.nome = ?1 WHERE c.id = ?2");
         update.setParameter(1, novoNome);
