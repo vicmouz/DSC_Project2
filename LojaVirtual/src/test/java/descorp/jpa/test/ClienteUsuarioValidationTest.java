@@ -25,27 +25,25 @@ import org.junit.Test;
  * @author root
  */
 public class ClienteUsuarioValidationTest extends GenericTest {
-    
-    
+
     @Test(expected = ConstraintViolationException.class)
     public void persistirClienteInvalido() {
-      ClienteUsuario cliente = null;
-      
+        ClienteUsuario cliente = null;
+
         try {
-            cliente = criarClienteUsuario();            
-            cliente.setCpf("595.436"); //CPF inválido
-            
+            cliente = criarClienteUsuario();
+
             em.persist(cliente);
             em.flush();
-            
+
         } catch (ConstraintViolationException ex) {
             Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
-            
+
             for (ConstraintViolation violation : constraintViolations) {
                 assertThat(violation.getRootBeanClass() + "." + violation.getPropertyPath() + ": " + violation.getMessage(),
                         CoreMatchers.anyOf(
                                 startsWith("class descorp.jpa.ClienteUsuario.cpf: CPF inválido"),
-                                startsWith("class descorp.jpa.ClienteUsuario.senha: A senha deve possuir pelo menos um caractere de: pontuação, maiúscula, minúscula e número.")                                
+                                startsWith("class descorp.jpa.ClienteUsuario.senha: A senha deve possuir pelo menos um caractere de: pontuação, maiúscula, minúscula e número.")
                         )
                 );
             }
@@ -54,8 +52,7 @@ public class ClienteUsuarioValidationTest extends GenericTest {
             throw ex;
         }
     }
-    
-    
+
     @Test(expected = ConstraintViolationException.class)
     public void invalidQueryUpdate() {
         TypedQuery<ClienteUsuario> query = em.createQuery("SELECT c FROM ClienteUsuario c WHERE c.id = :id", ClienteUsuario.class);
@@ -84,12 +81,12 @@ public class ClienteUsuarioValidationTest extends GenericTest {
             throw ex;
         }
     }
-    
-     private ClienteUsuario criarClienteUsuario() {
-        ClienteUsuario cliente = new ClienteUsuario();        
+
+    private ClienteUsuario criarClienteUsuario() {
+        ClienteUsuario cliente = new ClienteUsuario();
         cliente.setNome("Cicrano Knittrel");
         cliente.setEmail("rakin@gmail.com");
-        cliente.setCpf("100.639.154-13");
+        cliente.setCpf("595.436"); //CPF inválido
         cliente.setCelular("(81) 4002-8922");
         cliente.setFixo("(81) 8922-4002");
         Calendar c = Calendar.getInstance();
@@ -113,11 +110,11 @@ public class ClienteUsuarioValidationTest extends GenericTest {
         ec.setCidade("São Paulo");
         ec.setComplemento("Casa");
         ec.setEstado("São Paulo");
-        ec.setPais("BR");
+        ec.setPais("ZOP");
         ec.setNumero("580");
         return ec;
     }
-    
+
     public CartaoCredito criarCartaoCredito() {
         CartaoCredito cartaoCredito = new CartaoCredito();
         cartaoCredito.setBandeira("VISA");
@@ -129,5 +126,5 @@ public class ClienteUsuarioValidationTest extends GenericTest {
         cartaoCredito.setNumero("5131185499968808");
         return cartaoCredito;
     }
-    
+
 }
