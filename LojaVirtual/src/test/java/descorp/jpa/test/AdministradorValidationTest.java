@@ -6,15 +6,24 @@
 package descorp.jpa.test;
 
 import descorp.jpa.Administrador;
-import java.util.Set;
+import javax.persistence.CacheRetrieveMode;
+import javax.persistence.NoResultException;
+import javax.persistence.Query;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
-import org.hamcrest.CoreMatchers;
-import static org.hamcrest.CoreMatchers.startsWith;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertThat;
 
 /**
  *
