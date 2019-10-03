@@ -229,7 +229,7 @@ public class JpqlTest extends GenericTest{
         TypedQuery<String> query
                 = em.createQuery("SELECT DISTINCT(t.nome) FROM TipoProduto t ORDER BY t.nome", String.class);
         List<String> tipos = query.getResultList();
-        assertEquals(6, tipos.size());
+        assertEquals(7, tipos.size());
     }
 
 
