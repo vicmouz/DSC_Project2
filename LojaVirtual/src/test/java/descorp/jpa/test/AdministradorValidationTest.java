@@ -35,7 +35,7 @@ import static org.junit.Assert.assertThat;
  * @author victor
  */
 public class AdministradorValidationTest {
-    
+
     private static EntityManagerFactory emf;
     private static Logger logger;
     private EntityManager em;
@@ -78,7 +78,7 @@ public class AdministradorValidationTest {
         }
     }
 
-    @Test//(expected = ConstraintViolationException.class)
+    @Test(expected = ConstraintViolationException.class)
     public void persistirAdmInvalido() {
         Administrador adm = null;
         try {
@@ -86,8 +86,10 @@ public class AdministradorValidationTest {
 
             adm.setNome("Marcos Brasileiro");
             adm.setEmail("m@gmail.com");
-            adm.setCpf("595.436.610-20"); //CPF inválido
+            adm.setCpf("595.436"); //CPF inválido
             adm.setPermissao("Concedida");
+            em.persist(adm);
+            em.flush();
         } catch (ConstraintViolationException ex) {
             Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
 
@@ -95,7 +97,7 @@ public class AdministradorValidationTest {
                 assertThat(violation.getRootBeanClass() + "." + violation.getPropertyPath() + ": " + violation.getMessage(),
                         CoreMatchers.anyOf(
                                 startsWith("class descorp.jpa.Administrador.cpf: CPF inválido")
-                                )
+                        )
                 );
             }
             assertEquals(1, constraintViolations.size());
