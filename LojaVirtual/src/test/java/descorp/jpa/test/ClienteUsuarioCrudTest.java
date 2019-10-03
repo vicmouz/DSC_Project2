@@ -78,8 +78,7 @@ public class ClienteUsuarioCrudTest extends GenericTest {
     }
 
     private ClienteUsuario criarClienteUsuario() {
-        ClienteUsuario cliente = new ClienteUsuario();
-        //cliente.setId(1l);
+        ClienteUsuario cliente = new ClienteUsuario();        
         cliente.setNome("Cicrano Knittrel");
         cliente.setEmail("rakin@gmail.com");
         cliente.setCpf("100.639.154-13");
@@ -93,6 +92,7 @@ public class ClienteUsuarioCrudTest extends GenericTest {
         cliente.setEndereco(criarEndereco());
         CartaoCredito cartaoCredito = criarCartaoCredito();
         cliente.setCartaoCredito(cartaoCredito);
+        cliente.setSenha("aaa22AAA_");
 
         return cliente;
     }
@@ -118,7 +118,7 @@ public class ClienteUsuarioCrudTest extends GenericTest {
         c.set(Calendar.MONTH, Calendar.AUGUST);
         c.set(Calendar.DAY_OF_MONTH, 10);
         cartaoCredito.setDataExpiracao(c.getTime());
-        cartaoCredito.setNumero("4073000-100");
+        cartaoCredito.setNumero("5131185499968808");
         return cartaoCredito;
     }
 }

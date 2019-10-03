@@ -20,8 +20,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
-import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.CreditCardNumber;
 
 /**
  *
@@ -62,10 +62,10 @@ public class CartaoCredito implements Serializable {
 
     @NotNull (message = "Número não pode ser null")
     @Column(name = "TXT_NUMERO")
+    @CreditCardNumber(ignoreNonDigitCharacters=true)
     private String numero;
 
-    @Temporal(TemporalType.DATE)
-    
+    @Temporal(TemporalType.DATE)    
     @Column(name = "DT_EXPIRACAO", nullable = false)
     private Date dataExpiracao;
 

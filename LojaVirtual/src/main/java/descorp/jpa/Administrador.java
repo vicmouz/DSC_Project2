@@ -53,9 +53,6 @@ public class Administrador extends UsuarioGeral implements Serializable {
     @NotBlank(message = "Administrador precisa da permissão")
     @Column(name = "ADM_PERMISSAO")
     private String permissao;
-
-    
-
     
     public String getPermissao() {
         return permissao;
@@ -64,10 +61,5 @@ public class Administrador extends UsuarioGeral implements Serializable {
     public void setPermissao(String permissao) {
         this.permissao = permissao;
     }
-
-
-   
-
-
   
 }

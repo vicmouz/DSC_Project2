@@ -19,6 +19,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 import static javax.persistence.DiscriminatorType.STRING;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
@@ -53,6 +54,13 @@ private String nome;
 @Column(name="USUARIO_EMAIL",length=40)
 private String email;
 
+@NotBlank
+@Size(min = 6, max = 20)
+@Pattern(regexp = "((?=.*\\p{Digit})(?=.*\\p{Lower})(?=.*\\p{Upper})(?=.*\\p{Punct}).{6,20})",
+         message = "{descorp.jpa.UsuarioGeral.senha}")
+@Column(name = "USUARIO_SENHA")
+private String senha;
+
 @NotBlank(message = "CPF não pode ser null")
 @CPF
 @Column(name="USUARIO_CPF")
@@ -77,9 +85,7 @@ private String cpf;
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
- 
+    } 
 
     public String getEmail() {
         return email;
@@ -87,6 +93,14 @@ private String cpf;
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     public String getCpf() {
@@ -96,12 +110,5 @@ private String cpf;
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-
-    
-  
-
-
-   
-  
 
 }

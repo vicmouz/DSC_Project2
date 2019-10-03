@@ -113,6 +113,7 @@ public class PedidoCrudTest extends GenericTest {
         cliente.setCpf("113.839.514-54");
         cliente.setCelular("(81) 4002-8922");
         cliente.setFixo("(81) 8922-4002");
+        cliente.setSenha("aaAAAAA333_");
         Calendar c = Calendar.getInstance();
         c.set(Calendar.YEAR, 1997);
         c.set(Calendar.MONTH, Calendar.AUGUST);

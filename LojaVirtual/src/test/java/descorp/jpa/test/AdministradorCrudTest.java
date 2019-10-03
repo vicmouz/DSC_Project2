@@ -31,12 +31,12 @@ public class AdministradorCrudTest extends GenericTest {
     }
 
     private Administrador criarADM() {
-      Administrador adm = new Administrador();
-     // adm.setId(3l);
+      Administrador adm = new Administrador();     
       adm.setNome("Marcos Brasileiro");
       adm.setEmail("m@gmail.com");
       adm.setCpf("595.436.610-14");
       adm.setPermissao("Concedida");
+      adm.setSenha("aA333Aa_");
       return adm;
     }
     

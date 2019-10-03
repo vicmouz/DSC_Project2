@@ -33,7 +33,7 @@ public class CartaoCreditoCrudTest extends GenericTest {
 
     @Test
     public void Atualizar() {
-        String num = "5472941627962395";
+        String num = "5137549937899046";
 
         Long id = 1l;
         CartaoCredito c = em.find(CartaoCredito.class, id);
@@ -55,7 +55,7 @@ public class CartaoCreditoCrudTest extends GenericTest {
     @Test
     public void atualizarMerge() {
         logger.info("Executando atualizarMerge()");
-        String num = "5472941627962395";
+        String num = "5496892660188004";
 
         Long id = 1l;
         CartaoCredito c = em.find(CartaoCredito.class, id);
@@ -91,7 +91,7 @@ public class CartaoCreditoCrudTest extends GenericTest {
         data.set(Calendar.MONTH, Calendar.AUGUST);
         data.set(Calendar.DAY_OF_MONTH, 10);
         c.setDataExpiracao(data.getTime());
-        c.setNumero("5179847543153496");
+        c.setNumero("5595203580829570");
         c.setUsuario(criarClienteUsuario());
         return c;
     }
@@ -104,6 +104,7 @@ public class CartaoCreditoCrudTest extends GenericTest {
         cliente.setCpf("797.141.400-56");
         cliente.setCelular("(81) 4002-8922");
         cliente.setFixo("(81) 8922-4002");
+        cliente.setSenha("aaa22_AAA");
         Calendar c = Calendar.getInstance();
         c.set(Calendar.YEAR, 1997);
         c.set(Calendar.MONTH, Calendar.AUGUST);

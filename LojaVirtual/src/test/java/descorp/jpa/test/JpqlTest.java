@@ -240,11 +240,11 @@ public class JpqlTest extends GenericTest{
   public void CartaoCreditoPorNumero(){
         logger.info("Executando CartaoCreditoPorNumero");
         TypedQuery<CartaoCredito> query = em.createQuery("SELECT c FROM CartaoCredito c WHERE c.numero LIKE :numero ",CartaoCredito.class);
-        query.setParameter("numero","4073020012000002");
+        query.setParameter("numero","5467428134749728");
         List<CartaoCredito> cartoes = query.getResultList();
 
         for (CartaoCredito cartao : cartoes) {
-            assertTrue(cartao.getNumero().startsWith("4073020012000002"));
+            assertTrue(cartao.getNumero().startsWith("5467428134749728"));
         }
 
         assertEquals(1, cartoes.size());
