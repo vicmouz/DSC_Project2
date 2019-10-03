@@ -10,16 +10,14 @@ import javax.persistence.CacheRetrieveMode;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
-import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 /**
  *
  * @author root
  */
-public class TipoProdutoUpdateQuery extends GenericTest {
+public class TipoProdutoDeleteUpdateQuery extends GenericTest {
 
     @Test
     public void queryUpdate() {
@@ -35,23 +33,6 @@ public class TipoProdutoUpdateQuery extends GenericTest {
         query.setHint("javax.persistence.cache.retrieveMode", CacheRetrieveMode.BYPASS);
         TipoProduto tipo = query.getSingleResult();
         assertEquals(nome, tipo.getNome());        
-    }
-
-    @Test(expected = ConstraintViolationException.class)
-    public void invalidQueryUpdate() {
-        TypedQuery<TipoProduto> query = em.createQuery("SELECT c FROM TipoProduto c WHERE c.id = :id", TipoProduto.class);
-        query.setParameter("id", 3L);
-        TipoProduto tipo = query.getSingleResult();
-        tipo.setNome(null);
-
-        try {
-            em.flush();
-        } catch (ConstraintViolationException ex) {
-            ConstraintViolation violation = ex.getConstraintViolations().iterator().next();
-            //assertEquals("Não é um endereço de e-mail", violation.getMessage());
-            assertEquals(1, ex.getConstraintViolations().size());
-            throw ex;
-        }
     }
 
     @Test(expected = NoResultException.class)

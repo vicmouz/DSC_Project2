@@ -10,8 +10,6 @@ import javax.persistence.CacheRetrieveMode;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -36,24 +34,7 @@ public class CorProdutoDeleteUpdateQuery extends GenericTest {
         CorProduto cor = query.getSingleResult();
         assertEquals(novoNome, cor.getNome());        
     }
-
-    @Test(expected = ConstraintViolationException.class)
-    public void invalidQueryUpdate() {
-        TypedQuery<CorProduto> query = em.createQuery("SELECT c FROM CorProduto c WHERE c.id = :id", CorProduto.class);
-        query.setParameter("id", 2);
-        CorProduto cor = query.getSingleResult();
-        cor.setNome("");
-
-        try {
-            em.flush();
-        } catch (ConstraintViolationException ex) {
-            ConstraintViolation violation = ex.getConstraintViolations().iterator().next();
-            assertEquals("Não pode estar em branco", violation.getMessage());
-            assertEquals(1, ex.getConstraintViolations().size());
-            throw ex;
-        }
-    }
-
+    
     @Test(expected = NoResultException.class)
     public void queryDelete() {
         Long id = 1L;

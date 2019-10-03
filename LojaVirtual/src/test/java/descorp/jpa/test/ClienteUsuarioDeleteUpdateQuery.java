@@ -7,17 +7,11 @@ package descorp.jpa.test;
 
 import descorp.jpa.ClienteUsuario;
 import descorp.jpa.EnderecoCliente;
-import java.util.Set;
 import javax.persistence.CacheRetrieveMode;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
-import org.hamcrest.CoreMatchers;
-import static org.hamcrest.CoreMatchers.startsWith;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
 import org.junit.Test;
 
 /**
@@ -40,35 +34,6 @@ public class ClienteUsuarioDeleteUpdateQuery extends GenericTest {
         query.setHint("javax.persistence.cache.retrieveMode", CacheRetrieveMode.BYPASS);
         ClienteUsuario cliente = query.getSingleResult();
         assertEquals(novoNome, cliente.getNome());       
-    }
-
-    @Test(expected = ConstraintViolationException.class)
-    public void invalidQueryUpdate() {
-        TypedQuery<ClienteUsuario> query = em.createQuery("SELECT c FROM ClienteUsuario c WHERE c.id = :id", ClienteUsuario.class);
-        query.setParameter("id", 8L);
-        ClienteUsuario cliente = query.getSingleResult();
-        cliente.setEmail("emailInvalido");
-        cliente.setEndereco(this.criarEndereco());
-
-        try {
-            em.flush();
-        } catch (ConstraintViolationException ex) {
-
-            Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
-
-            for (ConstraintViolation violation : constraintViolations) {
-                assertThat(violation.getMessage(),
-                        CoreMatchers.anyOf(
-                                startsWith("Não é um endereço de e-mail"),
-                                startsWith("Validação País")
-                        )
-                );
-            }
-
-            assertEquals(2, constraintViolations.size());
-
-            throw ex;
-        }
     }
 
     @Test(expected = NoResultException.class)

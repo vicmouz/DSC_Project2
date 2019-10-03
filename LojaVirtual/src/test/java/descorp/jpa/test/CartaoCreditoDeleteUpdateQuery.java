@@ -11,8 +11,6 @@ import javax.persistence.CacheRetrieveMode;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -39,26 +37,9 @@ public class CartaoCreditoDeleteUpdateQuery extends GenericTest{
         logger.info(cartao.getDataExpiracao().toString());
     }
 
-    @Test(expected = ConstraintViolationException.class)
-    public void invalidQueryUpdate() {      
-        TypedQuery<CartaoCredito> query = em.createQuery("SELECT c FROM CartaoCredito c WHERE c.id = :id", CartaoCredito.class);
-        query.setParameter("id", 2);
-        CartaoCredito cartao = query.getSingleResult();        
-        cartao.setDataExpiracao(getData(10, 01, 1900));
-
-        try {
-            em.flush();
-        } catch (ConstraintViolationException ex) {
-            ConstraintViolation violation = ex.getConstraintViolations().iterator().next();
-           assertEquals("deve estar no futuro", violation.getMessage());
-           assertEquals(1, ex.getConstraintViolations().size());          
-            throw ex;
-        }
-    }
-
     @Test(expected = NoResultException.class)
     public void queryDelete() {
-        Long id = 3L;
+        Long id = 2L;
         Query delete = em.createQuery("DELETE FROM CartaoCredito AS c WHERE c.id = ?1");
         delete.setParameter(1, id);
         delete.executeUpdate();

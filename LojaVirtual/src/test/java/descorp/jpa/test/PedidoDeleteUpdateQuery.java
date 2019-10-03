@@ -11,8 +11,6 @@ import javax.persistence.CacheRetrieveMode;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -35,23 +33,6 @@ public class PedidoDeleteUpdateQuery extends GenericTest {
         query.setHint("javax.persistence.cache.retrieveMode", CacheRetrieveMode.BYPASS);
         Pedido pedido = query.getSingleResult();
         assertEquals(StatusPedido.ENTREGUE, pedido.getStatus());        
-    }
-
-    @Test(expected = ConstraintViolationException.class)
-    public void invalidQueryUpdate() {
-        TypedQuery<Pedido> query = em.createQuery("SELECT c FROM Pedido c WHERE c.id = :id", Pedido.class);
-        query.setParameter("id", 3L);
-        Pedido pedido = query.getSingleResult();
-        pedido.setLog(null);
-
-        try {
-            em.flush();
-        } catch (ConstraintViolationException ex) {
-            ConstraintViolation violation = ex.getConstraintViolations().iterator().next();
-            //assertEquals("Não é um endereço de e-mail", violation.getMessage());
-            assertEquals(1, ex.getConstraintViolations().size());
-            throw ex;
-        }
     }
 
     @Test(expected = NoResultException.class)
